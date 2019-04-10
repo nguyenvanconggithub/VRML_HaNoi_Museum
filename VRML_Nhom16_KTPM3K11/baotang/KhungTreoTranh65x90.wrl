@@ -1,0 +1,23 @@
+#VRML V2.0 utf8
+
+#Lòng Khung
+Transform {
+	children Shape {
+		appearance Appearance {
+			texture	ImageTexture {
+				url	["Cài URL ảnh của Tranh tại đây"]
+			}
+		}
+		geometry Box {
+			size 1.15 1.55 0
+		}
+	}
+	scale 0.5652 0.58 1
+}
+#Khung Viền Tranh
+Transform {
+	children Inline	{
+		url	["KhungVienTranh.wrl"]
+	}
+	scale 0.5652 0.58 1
+}

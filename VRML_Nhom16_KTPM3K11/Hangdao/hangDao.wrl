@@ -1,0 +1,138 @@
+#VRML V2.0 utf8
+Transform {
+	children [
+		DEF	thanhngang Shape {
+			 appearance DEF mausongsat Appearance {
+			    material  Material {
+					diffuseColor 0 0.545 0.271
+				}
+			}
+			geometry Box {
+				size 5 0.05 0.05
+			}
+		}
+	]
+}
+
+Transform {
+	children [
+		USE	thanhngang
+	]
+	translation	0 1 0
+}
+
+
+Transform {
+	children [
+		 DEF songsat Shape {
+			appearance USE mausongsat
+			geometry Box {
+				size 0.06 1 0.06
+			}
+		}
+	]
+	translation -2.23 0.525	0
+}
+Transform {
+	children [
+		USE	songsat
+	]
+	translation -1.96 0.525	0
+}
+Transform {
+	children [
+		USE	songsat
+	]
+	translation -1.96 0.525	0
+}
+Transform {
+	children [
+		USE	songsat
+	]
+	translation -1.69 0.525	0
+}
+Transform {
+	children [
+		USE	songsat
+	]
+	translation -1.42 0.525	0
+}
+Transform {
+	children [
+		USE	songsat
+	]
+	translation -1.15 0.525	0
+}
+Transform {
+	children [
+		USE	songsat
+	]
+	translation -0.88 0.525	0
+}
+Transform {
+	children [
+		USE	songsat
+	]
+	translation -0.61 0.525	0
+}
+Transform {
+	children [
+		USE	songsat
+	]
+	translation -0.34 0.525 0
+}
+Transform {
+	children [
+		USE	songsat
+	]
+	translation -0.07 0.525 0
+}
+Transform {
+	children [
+		USE	songsat
+	]
+	translation 0.2 0.525 0
+}
+Transform {
+	children [
+		USE	songsat
+	]
+	translation 0.47 0.525	0
+}
+Transform {
+	children [
+		USE	songsat
+	]
+	translation 0.74 0.525	0
+}
+Transform {
+	children [
+		USE	songsat
+	]
+	translation 1.01 0.525 0
+}
+Transform {
+	children [
+		USE	songsat
+	]
+	translation 1.28 0.525 0
+}
+Transform {
+	children [
+		USE	songsat
+	]
+	translation 1.55 0.525 0
+}
+Transform {
+	children [
+		USE	songsat
+	]
+	translation 1.82 0.525 0
+}
+Transform {
+	children [
+		USE	songsat
+	]
+	translation 2.09 0.525 0
+}
+

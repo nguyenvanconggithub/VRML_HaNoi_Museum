@@ -1,0 +1,18 @@
+#VRML V2.0 utf8
+
+Inline {
+	url	"../BanTrungBay.wrl"
+}
+Transform {
+	children Shape {
+		appearance Appearance {
+			texture	ImageTexture {
+				url	"../image/HienVatTrungBayIMG/IMG_0848.png"
+			}
+		}
+		geometry Box {
+			size 0.6 0.3 0
+		}
+	}
+	translation	0 0.35 0
+}

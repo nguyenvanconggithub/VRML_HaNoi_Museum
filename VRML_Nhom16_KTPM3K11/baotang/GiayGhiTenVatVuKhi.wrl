@@ -1,0 +1,51 @@
+#VRML V2.0 utf8
+
+#Giá Đỡ
+Shape {
+	appearance Appearance {
+		material Material {
+			diffuseColor 1 1 1
+			transparency 0.8
+		}
+	}
+	geometry Extrusion {
+		crossSection [0.1 0.1, 0.1 -0.1, -0.1 -0.1, -0.1 0.1, 0.1 0.1]
+		spine [0 0 0, 0 0.1 0]
+		scale [1 1,1 0]
+	}
+}
+
+#Tờ Giấy
+Transform {
+	children Shape {
+		appearance Appearance {
+			material Material {
+				diffuseColor 1 1 1
+			}
+		}
+		geometry Box {
+			size 0.2 0.1414 0
+		}
+	}
+	translation	0 0.05 0.05
+	rotation 1 0 0 -0.785398
+}
+#Nội Dung 
+Transform {
+	children Shape {
+		appearance Appearance {
+			material Material {
+				diffuseColor 0 0 0
+			}
+		}
+		geometry Text {
+			fontStyle FontStyle	{
+				size 0.03
+				
+			}
+			string ["Vũ Khí"]
+		}
+	}
+	translation	-0.05 0.051 0.051
+	rotation 1 0 0 -0.785398
+}

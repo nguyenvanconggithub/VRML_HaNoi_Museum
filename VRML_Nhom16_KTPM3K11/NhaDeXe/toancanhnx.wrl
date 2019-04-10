@@ -1,0 +1,173 @@
+#VRML V2.0 utf8
+
+DEF khung Group {
+	children [
+		Transform {
+			children [
+				Inline {
+					url	"Khung1.wrl"
+				}
+			]
+		}
+		Transform {
+			children [
+				Inline {
+					url	"Khung2.wrl"
+				}
+			]
+			translation	0 1.25 -1.525
+		}
+
+
+		Transform {
+			children [
+				Inline {
+					url	"Khung1.wrl"
+				}
+			]
+			translation	0 0 -2.95
+		}
+		Transform {
+			children [
+				Inline {
+					url	"Khung2.wrl"
+				}
+			]
+			translation	0 1.25 -4.475
+		}
+
+		Transform {
+			children [
+				Inline {
+					url	"Khung1.wrl"
+				}
+			]
+			translation	0 0 -5.9
+		}
+		Transform {
+			children [
+				Inline {
+					url	"Khung2.wrl"
+				}
+			]
+			translation	0 1.25 -7.425
+		}
+
+		Transform {
+			children [
+				Inline {
+					url	"Khung1.wrl"
+				}
+			]
+			translation	0 0 -8.85
+		}
+		Transform {
+			children [
+				Inline {
+					url	"Khung2.wrl"
+				}
+			]
+			translation	0 1.25 -10.375
+		}
+
+		Transform {
+			children [
+				Inline {
+					url	"Khung1.wrl"
+				}
+			]
+			translation	0 0 -11.8
+		}
+		Transform {
+			children [
+				Inline {
+					url	"Khung2.wrl"
+				}
+			]
+			translation	0 1.25 -13.325
+		}
+	]
+}
+Transform {
+	children [
+		USE	khung
+	]
+	translation	0 0 -14.75
+}
+Transform {
+	children [
+		Inline {
+			url	"Khung1.wrl"
+		}
+	]
+	translation	0 0 -29.5
+}
+
+Transform {
+	children [
+		DEF	khungmai Shape {
+			appearance DEF m Appearance	{
+				material Material {
+
+				}
+			}
+			geometry Box {
+				size 0.05 0.12 30.6
+			}
+		}
+	]
+	translation	-1.85 2.05 -14.675
+}
+
+Transform {
+	children [
+		USE	khungmai
+	]
+	translation	-0.95 1.95 -14.675
+}
+Transform {
+	children [
+		USE	khungmai
+	]
+	translation	-0.05 1.85 -14.675
+}
+Transform {
+	children [
+		USE	khungmai
+	]
+	translation	0.85 1.72 -14.675
+}
+Transform {
+	children [
+		USE	khungmai
+	]
+	translation	1.75 1.6 -14.675
+}
+Transform {
+	children [
+		USE	khungmai
+	]
+	translation	2.65 1.5 -14.675
+}
+Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					diffuseColor 0 0.384 0.255
+				}
+			}
+			geometry Box
+			{
+				size 5.2 0.01 31.1
+			}
+		}
+	]
+	rotation 0 0 1 -0.13
+	translation	0.5 1.85 -14.73
+}
+
+
+
+
+

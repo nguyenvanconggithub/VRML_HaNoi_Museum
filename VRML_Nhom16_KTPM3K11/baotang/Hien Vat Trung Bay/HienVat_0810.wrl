@@ -1,0 +1,18 @@
+#VRML V2.0 utf8
+
+Inline {
+	url	"../BucDonCao.wrl"
+}
+Transform {
+	children Shape {
+		appearance Appearance {
+			texture	ImageTexture {
+				url	"../image/HienVatTrungBayIMG/IMG_0810.png"
+			}
+		}
+		geometry Box {
+			size 0.4 0 0.2
+		}
+	}
+	translation	0 0.48 0
+}

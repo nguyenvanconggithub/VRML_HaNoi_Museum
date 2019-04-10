@@ -1,0 +1,31 @@
+#VRML V2.0 utf8
+
+Transform {
+	children [
+		Shape {
+			appearance Appearance {	 
+				texture	ImageTexture {
+					url	["..\image\nen_cot.jpg"]
+					repeatS	FALSE
+					repeatT	FALSE
+				}
+
+			}
+			geometry Extrusion {
+				beginCap TRUE
+				endCap TRUE
+				ccw TRUE
+				convex TRUE
+				creaseAngle 0
+				#crossSection [0 0,0.5 0.7,1 1.2,1.5 1.5,2 1.8,3 2,4 1.8,4.5 1.5,5 1.2,5.5 0.7,6 0, 5.5 0,5 0.6,4.5 1,4 1.2,3 1.5,2 1.2,1.5 1,1 0.6,0.5 0,0 0]
+				crossSection [9.31 2.02,8.48 2.45,7.36 2.75,5.95 2.92,4.87 2.96,3.74 2.92,2.43 2.71,1.39 2.45,0.43 1.87 ,   0.81 1.65,1.95 2.06,3.08 2.30,4.10 2.37,4.87 2.41,5.61 2.39,6.63 2.39,8.04 2.04,9.10 1.60,9.31 2.02]
+				orientation 0 0 1 0
+				scale 1 1
+				solid FALSE
+				spine [9.15 9.15 9.15, 0 0 0]
+				}
+		}
+	]
+	translation 0 -0.7 0
+	rotation -1 0 1.25 0.875
+}

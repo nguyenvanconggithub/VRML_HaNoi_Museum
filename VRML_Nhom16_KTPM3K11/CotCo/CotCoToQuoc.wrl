@@ -1,0 +1,40 @@
+#VRML V2.0 utf8
+
+DEF laco Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				texture	ImageTexture {
+					url	"..\hinhanh\QuocKy.jpg"
+				}
+			}
+			geometry Box {
+				size 1.5 1 0.01
+			}
+		}
+	]
+	translation	0.81 6 0
+	rotation 0 1 0 0.697
+	center -0.75 0 0
+}
+Transform {
+	children [
+		Inline {
+			url "Cot.wrl"
+		}
+	]
+	scale 0.75 1 1
+}
+
+#góc cờ vẫy
+DEF gocquay OrientationInterpolator	{
+	key	[0 0.25 0.75 1]
+	keyValue [0 1 0 0, 0 1 0 0.2, 0 1 0 0, 0 1 0 -0.2]
+}
+#thời gian cờ vẫy 1 vòng
+DEF	tg TimeSensor {
+	cycleInterval 3
+	loop TRUE
+}
+ROUTE tg.fraction_changed TO gocquay.set_fraction
+ROUTE gocquay.value_changed	TO laco.set_rotation

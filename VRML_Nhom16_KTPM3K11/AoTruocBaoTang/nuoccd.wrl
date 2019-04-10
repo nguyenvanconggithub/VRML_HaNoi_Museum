@@ -1,0 +1,62 @@
+#VRML V2.0 utf8
+DEF dongnuoc1 Group {
+	children [
+		Transform {
+			children [
+				Inline {
+					url	["nuoccd1.wrl"]
+				}
+			]
+		}
+		Transform {
+			children [
+				Inline {
+					url	["nuoccd1.wrl"]
+				}
+			]
+			rotation 0 1 0 1.57
+			translation	0 0.1 0
+		}
+		Transform {
+			children [
+				Inline {
+					url	["nuoccd1.wrl"]
+				}
+			]
+			rotation 0 1 0 0.3925
+			translation	0 0.25 0
+		}
+
+
+		Transform {
+			children [
+				Inline {
+					url	["nuoccd1.wrl"]
+				}
+			]
+			rotation 0 1 0 -1.57
+			translation	0 0.1 0
+		}
+		Transform {
+			children [
+				Inline {
+					url	["nuoccd1.wrl"]
+				}
+			]
+			rotation 0 1 0 -0.3925
+			translation	0 0.25 0
+		}
+	]
+}
+Transform {
+	children [
+		USE	dongnuoc1
+	]
+	translation	0 0.5 0
+}
+Transform {
+	children [
+		USE	dongnuoc1
+	]
+	translation	0 0.3 0
+}

@@ -1,0 +1,69 @@
+#VRML V2.0 utf8
+
+DEF muoiMetHangRao Group {
+	children [
+		Transform {
+			children [
+				Inline {
+					url	"TruHangRao.wrl"
+					}
+				]
+			}
+
+		Transform {
+			children [
+				Inline {
+					url	"HangRao.wrl"
+				}
+			]
+			translation	2.55 -0.5 -0.1
+		}
+
+
+		Transform {
+			children [
+				Inline {
+					url	"HangRao.wrl"
+				}
+			]
+			translation	-2.41 -0.5 -0.1
+		}
+		Transform {
+			children [
+				Inline {
+					url	"TruHangRao.wrl"
+				}
+			]
+			translation	-4.95 0 0 
+		}
+
+	]
+}
+Transform {
+	children [
+		USE muoiMetHangRao
+	]
+	translation	-9.96 0 0
+}
+Transform {
+	children [
+		USE muoiMetHangRao
+	]
+	translation	-19.92 0 0
+}
+Transform {
+	children [
+		USE muoiMetHangRao
+	]
+	translation	-29.94 0 0
+}
+Transform {
+	children [
+		USE muoiMetHangRao
+	]
+	translation	-39.85 0 0
+}
+
+
+
+

@@ -1,0 +1,52 @@
+#VRML V2.0 utf8
+NavigationInfo{type["EXAMINE","ANY"]}
+DEF	js Script{eventIn	SFBool goFromOne
+eventIn	SFBool goFromeTwo
+eventIn	SFBool goFloorOne
+eventIn	SFBool goFloorTwo
+eventIn	SFVec3f setCurrentView
+field SFVec3f DefaultTang1 -12 1.4 33
+field SFVec3f DefaultTang2 -12 5 33
+field SFVec3f tang1 0 0 0
+field SFVec3f tang2 0 0 0
+field SFVec3f curentView 0 0 0
+eventOut SFVec3f Go1
+eventOut SFVec3f Go2
+url	"javascript:
+function setCurrentView(val){
+curentView[0] = val[0];
+curentView[1] = val[1];
+curentView[2] = val[2];
+Console.log('a');
+}
+function goFromOne(val){
+if(val == true && curentView[0] == DefaultTang1[0] && curentView[1] == DefaultTang1[1] && curentView[2] == DefaultTang1[2]){
+tang1[0] = DefaultTang1[0];
+tang1[1] = DefaultTang1[1];
+tang1[2] = DefaultTang1[2];
+tang2[0] = DefaultTang2[0];
+tang2[1] = DefaultTang2[1];
+tang2[2] = DefaultTang2[2];
+}
+if(val == true && curentView[0] == DefaultTang2[0] && curentView[1] == DefaultTang2[1] && curentView[2] == DefaultTang2[2]){
+tang1 = DefaultTang2;
+tang2[0] = DefaultTang2[0];
+tang2[1] = DefaultTang2[1] + 5;
+tang2[2] = DefaultTang2[2];
+}
+}
+function goFloorOne(val){
+if(val == true){
+Go1[0] = tang1[0];
+Go1[1] = tang1[1];
+Go1[2] = tang1[2];
+}
+}
+function goFloorTwo(val){
+if(val == true){
+Go2[0] = tang2[0];
+Go2[1] = tang2[1];
+Go2[2] = tang2[2];
+}
+}
+"}

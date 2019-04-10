@@ -1,0 +1,32 @@
+#VRML V2.0 utf8
+
+DEF	nen_1 Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				texture	ImageTexture {
+					url	["..\image\nen_go.jpg"]
+				}
+			}
+			geometry Box {
+				size 17 0.2 1.5
+			}
+		}
+	]
+	translation	0 8.28 7.75
+}
+
+Transform {
+	children [USE nen_1 ]
+	rotation 0 1 0 1.57
+	scale 0.83 1 1
+}
+Transform {
+	children [USE nen_1 ]
+	rotation 0 1 0 3.14
+}
+Transform {
+	children [USE nen_1 ]
+	rotation 0 -1 0 1.57
+	scale 0.83 1 1
+}

@@ -1,0 +1,48 @@
+#VRML V2.0 utf8
+
+#Con Dao Thái Thịt
+Transform {
+	children Shape {
+		appearance Appearance {
+			texture	ImageTexture {
+				url	"../image/HienVatTrungBayIMG/IMG_0814.png"
+			}
+		}
+		geometry Box {
+			size 0.3 0 0.2
+		}
+	}
+	translation	0 0.58 0
+}
+#Con Dao Găm
+Transform {
+	children Shape {
+		appearance Appearance {
+			texture	ImageTexture {
+				url	"../image/HienVatTrungBayIMG/IMG_0816.png"
+			}
+		}
+		geometry Box {
+			size 0.3 0 0.2
+		}
+	}
+	translation	-0.65 0.48 0
+}
+#Cây Kéo
+Transform {
+	children Shape {
+		appearance Appearance {
+			texture	ImageTexture {
+				url	"../image/HienVatTrungBayIMG/IMG_0817.png"
+			}
+		}
+		geometry Box {
+			size 0.3 0 0.2
+		}
+	}
+	translation	0.65 0.48 0
+}
+#Bục
+Inline {
+	url	"../Buc3Khoang.wrl"
+}

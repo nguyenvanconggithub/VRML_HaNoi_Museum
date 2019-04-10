@@ -1,0 +1,164 @@
+#VRML V2.0 utf8
+
+#tường ao chiều rộng
+Transform {
+	children [
+		DEF tuongao Shape {
+			appearance Appearance {
+				textureTransform TextureTransform {
+					scale 20 20 
+					center 0 0
+				}
+				texture	ImageTexture {
+					url	["..\hinhanh\daoptuongao.jpg"]
+					repeatS	TRUE
+					repeatT	TRUE
+				}
+				material Material {
+
+				}
+			}
+			geometry Box
+			{
+				size  10 1.3 0.5
+			}
+		}
+	]
+}
+
+#tường ao chiều dài
+Transform {
+	children [
+		USE	tuongao
+	]
+	scale 0.6 1 1
+	rotation 0 1 0 1.57
+	translation	-4.75 0 3
+}
+
+Transform {
+	children [
+		USE	tuongao
+	]
+	translation	0 0 6
+}
+Transform {
+	children [
+		USE	tuongao
+	]
+	scale 0.6 1 1
+	rotation 0 1 0 1.57
+	translation	4.75 0 3
+}
+
+#đáy ao
+Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				textureTransform TextureTransform {
+					scale 10 10 
+					center 0 0
+				}
+				texture	ImageTexture {
+					url	["..\hinhanh\soidayao.jpg"]
+				}
+				material Material {	
+				}
+			}  
+			geometry Box {
+				size 10 0.05 6
+			}
+		}
+	]
+translation	0 -0.625 3
+}
+
+#nước trong ao
+Transform {
+	children [
+		Shape
+		{
+			appearance Appearance {
+				material Material {
+					transparency 0.7
+				}
+			}
+			geometry Box {
+				size 9 0.5 6
+			}
+		}
+	]
+	translation	0 -0.22 3
+}
+
+
+#gọi file máy bơm nước
+ Transform {
+	 children [
+		DEF lapmaybom Inline	{
+			 url ["maybomnuoc.wrl"]
+		 }
+	 ]
+	 scale 0.5 0.5 0.5
+	 translation -2 -0.23 1
+ }
+ Transform {
+	 children [
+		 USE lapmaybom
+	 ]
+	 scale 0.5 0.5 0.5
+	 translation 2 -0.23 1
+ }
+ Transform {
+	 children [
+		 USE lapmaybom
+	 ]
+	 scale 0.5 0.5 0.5
+	 translation 0 -0.23 3
+ }
+ Transform {
+	 children [
+		 USE lapmaybom
+	 ]
+	 scale 0.5 0.5 0.5
+	 translation -2 -0.23 5
+ }
+ Transform {
+	 children [
+		 USE lapmaybom
+	 ]
+	 scale 0.5 0.5 0.5
+	 translation 2 -0.23 5
+ }
+
+ #gọi file cá
+ Transform {
+	 children [
+		 Inline	{
+			 url "CaVang.wrl"
+		 }
+	 ]
+	 scale 0.3 0.3 0.3
+	 translation 1 -0.5 2
+ }
+ Transform {
+	 children [
+		 Inline	{
+			 url "CaVang.wrl"
+		 }
+	 ]
+	 scale 0.3 0.3 0.3
+	 translation -1 -0.5 4
+	 rotation 0 1 0 -0.785
+ }
+ Transform {
+	 children [
+		 Inline	{
+			 url "CaVang.wrl"
+		 }
+	 ]
+	 scale 0.3 0.3 0.3
+	 translation 1 -0.5 3
+	 rotation 0 1 0 0.3
+ }

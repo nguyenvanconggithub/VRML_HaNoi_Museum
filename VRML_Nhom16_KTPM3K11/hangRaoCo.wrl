@@ -1,0 +1,28 @@
+#VRML V2.0 utf8
+
+
+#hàng cỏ dọc
+Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				texture	ImageTexture {
+					url	"hinhanh/CoHangRao.jpg"
+					repeatS	TRUE
+					repeatT	TRUE
+				}
+				textureTransform TextureTransform {
+					scale 25 1  
+					center 0 0
+				}
+				material Material {
+
+				}
+			}
+			geometry Box {
+				size 19.8 0.5 0.15
+			}
+		}
+	]
+}
+				

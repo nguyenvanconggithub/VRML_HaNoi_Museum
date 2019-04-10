@@ -1,0 +1,86 @@
+#VRML V2.0 utf8
+
+
+#nền cỏ
+Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				texture	ImageTexture {
+					 url ["hinhanh/Co1.jpg"]
+				}
+				textureTransform TextureTransform {
+					scale 4 10
+				}
+			}
+			geometry Box {
+				 size 5 0.02 10
+			}
+		}
+	]
+}
+
+#luống cây xanh
+Transform {
+	children [
+		DEF cay Shape {
+			appearance Appearance {
+				 texture ImageTexture {
+					 url ["hinhanh/CayCanhCotCo.jpg"]
+				 }
+				 textureTransform TextureTransform {
+					 scale 15 2.5
+				 }
+			}
+			geometry Box {
+				size 5 0.3 1.5
+			}
+		}
+	]
+	translation	0 0.15 4.25
+}
+
+Transform {
+	children [
+		USE	cay
+	]
+	translation	0 0.15 0
+}
+Transform {
+	children [
+		USE	cay
+	]
+	translation	0 0.15 -4.25
+}
+
+#bụi hoa hình thoi
+
+Transform {
+	children [
+		DEF hoa Shape {
+			appearance Appearance {
+				texture ImageTexture {
+					url	"hinhanh/HoaTim.jpg"
+					repeatS	TRUE 
+					repeatT	TRUE
+				}
+				textureTransform TextureTransform {
+					scale 3 3
+				}
+			}
+			geometry Box {
+				size 1 0.05 1
+			}
+		}
+	]
+	translation	0 0.025 2.2
+	rotation 0 1 0 0.785
+}
+
+Transform {
+	children [
+		USE	hoa
+	]
+	translation	0 0.025 -2.2
+	rotation 0 1 0 0.785
+}

@@ -1,0 +1,80 @@
+#VRML V2.0 utf8
+
+# Mặt Bàn
+Shape {
+	appearance Appearance {
+		material Material {
+			diffuseColor 0.2 0.1 0
+		}
+	}
+	geometry Box {
+		size 1.2 0.2 0.7
+	}
+}
+# 4 Chân bàn
+Transform {
+	children [
+		DEF chanBan Shape {
+			appearance Appearance {
+				material Material {
+					diffuseColor 0.2 0.1 0
+				}
+			}
+			geometry Box {
+				size 0.1 0.6 0.1
+			}
+		}
+	]
+	translation	0.55 -0.4 0.3
+}
+Transform {
+	children USE chanBan
+	translation	-0.55 -0.4 0.3
+}
+Transform {
+	children USE chanBan
+	translation	-0.55 -0.4 -0.3
+}
+Transform {
+	children USE chanBan
+	translation	0.55 -0.4 -0.3
+}
+
+# Bục Vải Đỏ
+Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					diffuseColor 0.8 0 0
+					emissiveColor 0.5 0 0
+				}
+			}
+			geometry Extrusion {
+				crossSection [-0.6 -0.35,-0.6 0.35,0.6 0.35,0.6 -0.35,-0.6 -0.35]
+				spine [0 0 0, 0 0.1 0]
+				solid FALSE
+				scale [1 1, 0.75 0.75]
+			}
+		}
+	]
+	translation	0 0.1 0
+}
+
+#Kính Bảo Vệ
+Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					diffuseColor 1 1 1
+					transparency 0.9
+				}
+			}
+			geometry Box {
+			   size	1.2 0.4 0.7
+			}
+		}
+	]
+	translation	0 0.3 0
+}

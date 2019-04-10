@@ -1,0 +1,23 @@
+#VRML V2.0 utf8
+
+#tường cong trong nhà
+DEF	cotCong Transform {
+	children [Inline {
+		url	["tuongCongTrongNhaThang.wrl"]
+	}] 
+	translation	-3.8 0 0.5
+	rotation 0 1 0 -0.85
+}
+
+Transform {
+	children [USE cotCong ]
+	rotation 0 1 0 1.57
+}
+Transform {
+	children [USE cotCong ]
+	rotation 0 1 0 3.14
+}
+Transform {
+	children [USE cotCong ]
+	rotation 0 1 0 4.71
+}

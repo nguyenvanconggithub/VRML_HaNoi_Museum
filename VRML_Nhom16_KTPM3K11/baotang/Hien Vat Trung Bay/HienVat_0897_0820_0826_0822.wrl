@@ -1,0 +1,64 @@
+#VRML V2.0 utf8
+
+Inline {
+	url	"../TuTrungBay.wrl"
+}
+Transform {
+	children Shape {
+		appearance Appearance {
+			texture	ImageTexture {
+				url	"../image/HienVatTrungBayIMG/IMG_0897.png"
+			}
+		}
+		geometry Box {
+			size 0.6 0 0.3
+		}
+	}
+	translation	-1 0.46 0
+}
+Transform {
+	children Shape {
+		appearance Appearance {
+			texture	ImageTexture {
+				url	"../image/HienVatTrungBayIMG/IMG_0820.png"
+			}
+		}
+		geometry Box {
+			size 0.6 0 0.3
+		}
+	}
+	translation	-0.3 0.46 0
+}
+Transform {
+	children Shape {
+		appearance Appearance {
+			texture	ImageTexture {
+				url	"../image/HienVatTrungBayIMG/IMG_0826.png"
+			}
+		}
+		geometry Box {
+			size 0.6 0 0.3
+		}
+	}
+	translation	0.3 0.46 0
+}
+Transform {
+	children Shape {
+		appearance Appearance {
+			texture	ImageTexture {
+				url	"../image/HienVatTrungBayIMG/IMG_0822.png"
+			}
+		}
+		geometry Box {
+			size 0.6 0 0.3
+		}
+	}
+	translation	1 0.46 0
+}
+#Giấy Ghi Tên Vật
+Transform {
+	children Inline	{
+		url	"../GiayGhiTenVatVuKhi.wrl"
+	}
+	translation	0 0.46 0.2
+}

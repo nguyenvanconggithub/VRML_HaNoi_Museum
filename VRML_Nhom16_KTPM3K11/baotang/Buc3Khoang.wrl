@@ -1,0 +1,93 @@
+#VRML V2.0 utf8
+
+#Bục Gỗ
+Shape {
+	appearance Appearance {
+		material Material {
+			diffuseColor 0.2 0.1 0
+		}
+	}
+	geometry Box {
+		size 2.1 0.75 0.7
+	}
+}
+
+#Bục Vải Đỏ 2 bên
+Transform {
+	children [
+		DEF bucVaiDo Shape {
+			appearance Appearance {
+				material Material {
+					diffuseColor 0.8 0 0
+					emissiveColor 0.5 0 0
+				}
+			}
+			geometry Extrusion {
+				crossSection [-0.35 -0.35,-0.35 0.35,0.35 0.35,0.35 -0.35,-0.35 -0.35]
+				spine [0 0 0, 0 0.1 0]
+				scale [1 1,0.75 0.75]	
+			}
+		}
+	]
+	translation	-0.7 0.375 0
+}
+Transform {
+	children USE bucVaiDo
+	translation	0.7 0.375 0
+}
+#Bục Vải Đỏ Giữa
+Transform {
+	children Shape {
+		appearance Appearance {
+			material Material {
+				diffuseColor 0.8 0 0
+				emissiveColor 0.5 0 0
+			}
+		}
+		geometry Box {
+			size 0.7 0.2 0.7
+		}
+	}
+	translation	0 0.475 0
+}
+
+#Kính Bảo Vệ
+Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					diffuseColor 1 1 1
+					transparency 0.9
+				}
+			}
+			geometry Box {
+			   size	2.1 1.25 0.7
+			}
+		}
+	]
+	translation	0 1 0
+}
+#Chụp Gỗ
+Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					diffuseColor 0.2 0.1 0
+				}
+			}
+			geometry Box {
+				size 2.1 0.1 0.7
+			}
+		}
+	]
+	translation	0 1.67 0
+}
+#Đèn
+Transform {
+	children Inline	{
+		url	["Den.wrl"]
+	}
+	translation	0 1.65 0
+}

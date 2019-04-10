@@ -1,0 +1,524 @@
+#VRML V2.0 utf8
+
+#VRML V2.0 utf8
+
+#Mũ Bảo Vệ
+Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					diffuseColor 0.53 0.59 0.80
+				}
+			}
+			geometry Cylinder {
+				height 0.1
+				radius 0.13
+				bottom FALSE
+			}
+		}
+		Transform {
+			children Shape {
+				appearance Appearance {
+					material Material {
+						diffuseColor 0.53 0.59 0.80
+					}
+				}
+				geometry Box {
+					size 0.2 0.01 0.15
+				}
+			}
+			translation	0 -0.05 0.15
+		}
+	]
+	translation	0 0.1 0
+
+}
+#Đầu
+Transform {
+	children Shape {
+		appearance Appearance {
+		  material Material	{
+			  diffuseColor 0.9882353 0.854902 0.83529411
+		  }
+		}
+		geometry Sphere	{
+			radius 0.12
+		}
+	}
+	scale 1 1.2 1
+}
+#Mắt Phải
+Transform {
+	children [
+		#Lòng Trắng
+		DEF wEye Transform {
+			children Shape {
+				appearance Appearance {
+					material Material {
+						diffuseColor 1 1 1
+					}
+				}
+				geometry Sphere	{
+					radius 0.01
+				}
+			}
+			scale 1.2 0.8 0.2
+		}
+		#Lòng Đen
+		DEF bEye Transform {
+			children Shape  {
+				appearance Appearance {
+					material Material {
+						diffuseColor 0 0 0
+					}
+				}
+				geometry Sphere	{
+					radius 0.007
+				}
+			}
+			scale 1 1 0.2
+			translation	0 0 0.0011
+		}
+	]
+	translation	0.045 0.01 0.112
+}	
+#Mắt Trái
+Transform	{
+	children [
+		USE	wEye	#Lòng Trắng
+		USE	bEye	#Lòng Đen
+	]
+	translation	-0.045 0.01 0.112
+}
+#Mũi
+Transform	{
+	children Shape {
+		appearance Appearance {
+			material Material {
+				diffuseColor 0.9882353 0.854902 0.83529411
+			}
+		}
+		geometry Cone {
+			bottomRadius 0.01
+			height 0.05
+		}
+	}
+	translation	0 -0.01 0.116
+	scale 1 1 2
+}	
+#Môi
+Transform	{
+	children Shape {
+		appearance Appearance {
+			material Material {
+				diffuseColor  0.93333333 0.48627451 0.419607843
+			}
+		}
+		geometry Sphere	{
+			radius 0.02
+		}
+	}
+	translation	0 -0.08 0.096
+	scale 1.5 0.5 0.15
+	rotation 1 0 0 0.707
+}	
+#Tai Phải
+Transform {
+	children DEF tai Shape {
+		appearance Appearance {
+			material Material {
+				diffuseColor 0.9882353 0.854902 0.83529411
+			}
+		}
+		geometry IndexedFaceSet	{
+			coord Coordinate {
+				point [0 0 0, 0.035 0 0,0.0475 -0.02875 0,0.0475 -0.06 0,0 -0.0725 0, 0 0 0]
+			}
+			coordIndex [0 1 2 3 4 5]
+			solid FALSE
+		}
+	}
+	translation	0.095 -0.04 0
+	rotation 1 0 0 3.1415
+}
+#Tai Trái
+Transform {
+	children Transform {
+		children USE tai
+		rotation 1 0 0 3.1415
+	}
+	translation	-0.095 -0.04 0
+	rotation 0 1 0 3.1415
+}
+
+#Cổ
+Transform {
+	children Shape {
+		appearance Appearance {
+			material Material {
+			   diffuseColor 0.9882353 0.854902 0.83529411
+			}
+		}
+		geometry Cylinder {
+			height 0.06
+			radius 0.04
+		}
+	}
+	translation	0 -0.15 0
+}
+#Thân
+Transform {
+	children Shape {
+		appearance Appearance {
+			texture	ImageTexture {
+				url	["image/AoBaoVe.png"]
+			}
+			textureTransform TextureTransform {
+				scale 1 1
+				rotation 3.1415
+				translation 0.31 0
+			}
+		}
+		geometry Extrusion {
+			crossSection [-0.22 0.08,0.22 0.08,0.22 -0.08,-0.22 -0.08 -0.22 0.08]
+			spine [0 0 0,0 -0.1 0,0 -0.45 0]
+			scale [1 1,1 1,0.6 0.6]
+		}
+	}
+	translation	0 -0.18 0
+}
+#Hông
+Transform {
+	children Shape {
+		appearance Appearance {
+			texture	ImageTexture {
+				url	"image/HoaVan1.jpg"
+			}
+			textureTransform TextureTransform {
+				scale 5 5
+			}
+		}
+		geometry Extrusion {
+			crossSection [-0.15 0.05,0.15 0.05,0.15 -0.05,-0.15 -0.05 -0.15 0.05]
+			spine [0 0 0,0 -0.05 0,0 -0.15 0]
+			scale [1 1,1 1,0.5 0.5]
+		}
+	}
+	translation	0 -0.63 0
+}
+#Chân Trái
+DEF chanTrai Transform {
+	children [
+	DEF chan Group{
+	children[
+		Transform {
+		#Đùi
+			children [
+				DEF dui Shape {
+				   appearance Appearance {
+					   texture ImageTexture	{
+						   url "image/HoaVan1.jpg"
+					   }
+				   }
+				   geometry	Extrusion {
+					   crossSection	[-0.004 0.2505,
+    		                		 -0.132 0.2465,
+            			             -0.2505 0.1855,
+                	   		         -0.34 0.124,
+                		    	     -0.3771 0.01,
+                        			 -0.336 -0.1165,
+                        			 -0.2545 -0.1836,
+                        			 -0.13 -0.2485,
+                        			 -0.006 -0.2445,
+                        			  0.1145 -0.2405,
+                        			 0.245 -0.1875,
+                        			 0.3265 -0.1245,
+                        			  0.367 -0.002,
+                        			  0.3265 0.1285,
+                        			 0.247 0.1914,
+                        			 0.1245 0.2505,
+                        			 -0.01 0.2585,
+                        			 -0.004 0.2505]
+						scale [1 1,0.7 0.7]
+						spine [0 0 0,0 -0.45 0]
+						solid FALSE
+
+				 }
+				}
+			]
+			rotation 1 0 0 -0.1
+			scale 0.2 1 0.18
+			translation	0.07 -0.7 0
+		}
+		#Bắp Chân
+		Transform	{
+			children DEF bapChan Shape {
+				appearance Appearance {
+					   texture ImageTexture	{
+						   url "image/HoaVan1.jpg"
+					   }
+				}
+				geometry Extrusion {
+					crossSection [-0.004 0.2505,
+    		                    -0.132 0.2465,
+    		                     -0.2505 0.1855,
+    		                     -0.34 0.124,
+    		                     -0.3771 0.01,
+    		                     -0.336 -0.1165,
+    		                     -0.2545 -0.1836,
+    		                    -0.13 -0.2485,
+    		                    -0.006 -0.2445,
+    		                    0.1145 -0.2405,
+    		                    0.245 -0.1875,
+    		                    0.3265 -0.1245,
+        		                   0.367 -0.002,
+        		                  0.3265 0.1285,
+        		                  0.247 0.1914,
+        		                  0.1245 0.2505,
+        		                  -0.01 0.2585,
+        		                  -0.004 0.2505]
+ 
+					spine [0 0 0,0 -0.35 0]
+					scale [0.7 0.7,0.4 0.4]
+					solid FALSE
+				}
+			}
+			rotation 1 0 0 0.1
+			scale 0.2 1 0.15
+			translation	0.07 -1.16 0.05
+		}
+		#Khớp chân
+		Transform	{
+			children Shape {
+				appearance Appearance {
+					   texture ImageTexture	{
+						   url "image/HoaVan1.jpg"
+					   }
+				}
+				geometry Sphere	{
+					radius 0.04
+				}
+			}
+			scale 1.4 1 0.8
+			translation	0.07 -1.15 0.05
+		}
+		#Bàn Chân
+		Transform	{
+			children Shape {
+				appearance Appearance {
+					material Material {
+						 diffuseColor 0.9882353 0.854902 0.83529411
+					}
+				}
+				geometry Extrusion {
+					crossSection [-0.22 0.08,0.22 0.08,0.22 -0.08,-0.22 -0.08, -0.22 0.08]
+					spine [0 0 0, 0 0.022 0]
+					scale [1 1,1 0]
+				}
+			}
+			scale 0.1 5 0.3
+			rotation 1 0 0 1.7
+			translation	0.07 -1.5 0
+
+		}	
+	]
+
+}	
+	]
+	center 0.08 -0.75 0
+}
+#Chân Phải
+DEF chanPhai Transform {
+	children USE chan
+	translation	-0.14 0 0
+	center -0.08 -0.75 0
+}
+#Tay Trái
+DEF	tayTrai Transform {
+	children [
+		DEF tay Group {
+			children [
+				#Khớp Vai
+				Transform {
+					children Shape {
+						appearance Appearance {
+							texture	ImageTexture {
+								url	"image/TayAoBaoVe.png"
+							}
+							textureTransform TextureTransform {
+								scale 3 3
+							}
+						}
+						geometry Sphere	{
+							radius 0.07
+						}
+					}
+				}
+				#Bắp Tay
+				Transform {
+					children Shape {
+						appearance Appearance {
+							texture	ImageTexture {
+								url	"image/TayAoBaoVe.png"
+							}
+							textureTransform TextureTransform {
+								scale 5 5
+							}
+						}
+						geometry Extrusion {
+							crossSection [-0.004 0.2505,
+    		                    -0.132 0.2465,
+    		                     -0.2505 0.1855,
+    		                     -0.34 0.124,
+    		                     -0.3771 0.01,
+    		                     -0.336 -0.1165,
+    		                     -0.2545 -0.1836,
+    		                    -0.13 -0.2485,
+    		                    -0.006 -0.2445,
+    		                    0.1145 -0.2405,
+    		                    0.245 -0.1875,
+    		                    0.3265 -0.1245,
+        		                   0.367 -0.002,
+        		                  0.3265 0.1285,
+        		                  0.247 0.1914,
+        		                  0.1245 0.2505,
+        		                  -0.01 0.2585,
+        		                  -0.004 0.2505]
+							spine [0 0 0, 0 -0.22 0]
+							scale [1 1,0.8 0.8]
+							solid FALSE
+						}
+					}
+					scale 0.15 1 0.2
+					translation	0 -0.035 0
+				}
+				#Khớp tay
+				Transform {
+					children Shape {
+						appearance Appearance {
+							texture	ImageTexture {
+								url	"image/TayAoBaoVe.png"
+							}
+							textureTransform TextureTransform {
+								scale 5 5
+							}
+						}
+						geometry Sphere	{
+							radius 0.03
+						}
+					}
+					scale 1.4 1 1.4
+					translation	0 -0.26 0
+				}
+				#Tay dưới
+				Transform {
+					children Shape {
+						appearance Appearance {
+							texture	ImageTexture {
+								url	"image/TayAoBaoVe.png"
+							}
+							textureTransform TextureTransform {
+								scale 2 1
+							}
+						}
+						geometry Extrusion {
+							crossSection [-0.004 0.2505,
+    		                    -0.132 0.2465,
+    		                     -0.2505 0.1855,
+    		                     -0.34 0.124,
+    		                     -0.3771 0.01,
+    		                     -0.336 -0.1165,
+    		                     -0.2545 -0.1836,
+    		                    -0.13 -0.2485,
+    		                    -0.006 -0.2445,
+    		                    0.1145 -0.2405,
+    		                    0.245 -0.1875,
+    		                    0.3265 -0.1245,
+        		                   0.367 -0.002,
+        		                  0.3265 0.1285,
+        		                  0.247 0.1914,
+        		                  0.1245 0.2505,
+        		                  -0.01 0.2585,
+        		                  -0.004 0.2505]
+							spine [0 0 0, 0 -0.25 0]
+							scale [0.8 0.8,0.6 0.6]
+							solid FALSE
+						}
+					}
+					rotation 1 0 0 -0.3
+					scale 0.15 1 0.2
+					translation	0 -0.275 0
+				}
+				#Bàn Tay
+				Transform {
+					children [
+						Transform {
+							children Shape {
+								appearance Appearance {
+									material Material {
+										diffuseColor 0.9882353 0.854902 0.83529411
+									}
+								}
+								geometry Box {
+									size 0.01 0.1 0.05
+								}
+							}
+						}
+					]
+					rotation 1 0 0 -0.3
+					translation	0 -0.55 0.085
+				}
+			]
+		}
+	]
+	translation	0.22 -0.25 0
+}
+#Tay Phải
+DEF	tayPhai Transform {
+	children [
+		USE	tay
+		Transform {
+			#Dùi Cui
+			children Shape {
+				appearance Appearance {
+					material Material {
+						diffuseColor 0 0 0
+					}
+				}
+				geometry Cylinder {
+					height 0.4
+					radius 0.02
+				}
+			}
+			rotation 1 0 0 1.57
+			translation	0 -0.55 0.2
+		}
+	]
+	translation	-0.22 -0.25 0
+}
+#
+#Inter cho tay Trái
+DEF	InterLeftLeg&RightHand OrientationInterpolator	{
+	key	[0 0.25 0.5 0.75 1]
+	keyValue [1 0 0 -0.2,1 0 0 0,1 0 0 0.2, 1 0 0 0,1 0 0 -0.2]
+}
+#Inter cho tay Phải
+DEF	InterRightLeg&LeftHand OrientationInterpolator {
+	key	[0 0.25 0.5 0.75 1]
+	keyValue [1 0 0 0.2,1 0 0 0, 1 0 0 -0.2,1 0 0 0,1 0 0 0.2]
+}
+#Thời gian hoàn thành 1 Inter cho cả 4 chân tay
+DEF loopTime TimeSensor {
+	cycleInterval 3
+	loop TRUE
+}
+
+ROUTE loopTime.fraction_changed	TO InterLeftLeg&RightHand.set_fraction
+ROUTE loopTime.fraction_changed	TO InterRightLeg&LeftHand.set_fraction
+ROUTE InterLeftLeg&RightHand.value_changed	TO chanTrai.rotation
+ROUTE InterRightLeg&LeftHand.value_changed TO chanPhai.rotation
+
+ROUTE InterLeftLeg&RightHand.value_changed TO tayPhai.rotation
+ROUTE InterRightLeg&LeftHand.value_changed TO tayTrai.rotation
+

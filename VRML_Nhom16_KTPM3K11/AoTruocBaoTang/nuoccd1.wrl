@@ -1,0 +1,146 @@
+#VRML V2.0 utf8
+
+
+# tạo nước 
+DEF NC Group {
+	children [
+		Transform {
+			children [
+				DEF giotnuoc Shape {
+					appearance Appearance {
+						material Material {
+							diffuseColor 0.9 0.9 0.9
+						}
+
+					}
+					geometry Sphere {
+						 radius	0.06
+					}
+				}
+			] 
+			scale 1 1.3 1
+		}
+		Transform {
+			children [
+				USE	giotnuoc
+			]
+			translation	-0.15 0 0
+			scale 1 1.5 1
+		}
+		Transform {
+			children [
+				USE	giotnuoc
+			]
+			translation	-0.13 0 0
+			scale 1 2 1
+		}
+		Transform {
+			children [
+				USE	giotnuoc
+			]
+			translation	0.12 0 0
+			scale 1 1.4 1
+		}
+		Transform {
+			children [
+				USE	giotnuoc
+			]
+			translation	0.129 0 0
+			scale 1 1.7 1
+		}
+		Transform {
+			children [
+				USE	giotnuoc
+			]
+			scale 1 1.8 1
+		}
+
+	]
+}
+DEF NC0 Transform {
+	children [
+		USE	NC
+	]
+}
+DEF NC1 Transform {
+	children [
+		USE	NC
+	]
+	translation	0.05 0 0
+}
+DEF NC2 Transform {
+	children [
+		USE	NC
+	]
+	translation	0.05 0 0.02
+}
+
+
+#hướng nước bay lên
+DEF huong1 PositionInterpolator
+{
+	key	[0, 1]
+	keyValue [0 0 0, 0 6 0]
+}
+DEF	 huong2	PositionInterpolator
+{
+	key	[0, 1]
+	keyValue [0 0 0, -0.5 6 0]
+}
+DEF	 huong3	PositionInterpolator
+{
+	key	[0, 1]
+	keyValue [0 0 0, 0.45 6 0]
+}
+
+#thời gian nước được phun lên
+DEF chay TimeSensor {
+	cycleInterval  0.1
+    loop TRUE
+}
+DEF chay1 TimeSensor {
+	cycleInterval  0.15
+    loop TRUE
+}
+DEF chay2 TimeSensor {
+	cycleInterval  0.12
+    loop TRUE
+}
+DEF chay3 TimeSensor {
+	cycleInterval  0.13
+    loop TRUE
+}
+DEF chay4 TimeSensor {
+	cycleInterval  0.145
+    loop TRUE
+}
+DEF chay5 TimeSensor {
+	cycleInterval  0.152
+    loop TRUE
+}
+DEF chay6 TimeSensor {
+	cycleInterval  0.173
+    loop TRUE
+}
+
+
+ROUTE chay.fraction_changed TO huong3.set_fraction
+ROUTE huong3.value_changed TO NC0.set_translation
+
+ROUTE chay2.fraction_changed TO huong1.set_fraction
+ROUTE huong1.value_changed TO NC1.set_translation
+
+ROUTE chay1.fraction_changed TO huong2.set_fraction
+ROUTE huong2.value_changed TO NC2.set_translation
+
+ROUTE chay6.fraction_changed TO huong3.set_fraction
+ROUTE huong3.value_changed TO NC0.set_translation
+
+ROUTE chay3.fraction_changed TO huong1.set_fraction
+ROUTE huong1.value_changed TO NC1.set_translation
+
+ROUTE chay4.fraction_changed TO huong2.set_fraction
+ROUTE huong2.value_changed TO NC2.set_translation
+
+ROUTE chay5.fraction_changed TO huong1.set_fraction
+ROUTE huong1.value_changed TO NC1.set_translation

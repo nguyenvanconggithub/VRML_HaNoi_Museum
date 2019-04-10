@@ -1,0 +1,131 @@
+#VRML V2.0 utf8
+
+
+
+Transform {
+	children [
+		DEF KhungCuaNgang Shape {
+			appearance Appearance {
+				material Material {
+
+				}
+			}
+			geometry Box {
+				size 2.8 0.05 0.05
+			}
+		}
+	]
+}
+Transform {
+	children [
+		USE	 KhungCuaNgang
+	]
+	translation	 0 -2.2 0
+}
+
+Transform {
+	children [
+		USE	 KhungCuaNgang
+	]
+	translation	 0 -2 0
+}
+Transform {
+	children [
+		USE	 KhungCuaNgang
+	]
+	translation	 0 -0.2 0
+}
+Transform {
+	children [
+		USE	 KhungCuaNgang
+	]
+	translation	 0 -1.6 0
+}
+
+
+Transform {
+	children [
+		DEF KhungCuaDoc Shape {
+			appearance Appearance {
+				material Material {
+
+				}
+			}
+			geometry Box {
+				size  0.05 2.2 0.05
+			}
+		}
+	]
+	translation	1.375 -1.1 0
+}
+
+Transform {
+	children [
+		USE	KhungCuaDoc
+	]
+	translation -1.375 -1.1 0
+}
+Transform {
+	children [
+		USE	KhungCuaDoc
+	]
+	translation -1.095 -1.1 0
+	scale 1 0.82 1
+}
+
+Transform {
+	children [
+		USE	KhungCuaDoc
+	]
+	translation -0.815 -1.1 0
+	scale 1 0.82 1
+}
+Transform {
+	children [
+		USE	KhungCuaDoc
+	]
+	translation -0.535 -1.1 0
+	scale 1 0.82 1
+}
+Transform {
+	children [
+		USE	KhungCuaDoc
+	]
+	translation -0.255 -1.1 0
+	scale 1 0.82 1
+}
+Transform {
+	children [
+		USE	KhungCuaDoc
+	]
+	translation -0.025 -1.1 0
+	scale 1 0.82 1
+}
+Transform {
+	children [
+		USE	KhungCuaDoc
+	]
+	translation 0.255 -1.1 0
+	scale 1 0.82 1
+}
+Transform {
+	children [
+		USE	KhungCuaDoc
+	]
+	translation 0.535 -1.1 0
+	scale 1 0.82 1
+}
+Transform {
+	children [
+		USE	KhungCuaDoc
+	]
+	translation 0.815 -1.1 0
+	scale 1 0.82 1
+}
+Transform {
+	children [
+		USE	KhungCuaDoc
+	]
+	translation 1.095 -1.1 0
+	scale 1 0.8 1
+}

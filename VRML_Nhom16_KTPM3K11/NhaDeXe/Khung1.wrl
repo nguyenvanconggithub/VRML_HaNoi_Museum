@@ -1,0 +1,63 @@
+#VRML V2.0 utf8
+
+
+# cột nhà để xe
+Transform {
+	children [
+		DEF cot Shape {
+			appearance DEF m Appearance	{
+				material Material {
+
+				}
+			}
+			geometry Cylinder{
+				height 2.5
+				radius 0.05
+			}
+		}
+	]
+}
+
+Transform {
+	children [
+		USE	cot
+	]
+	translation	2.94 0 0
+}
+
+Transform {
+	children [
+		DEF	khung Shape	{
+			appearance USE m
+			geometry Box {
+				size 3 0.05 0.12
+			}
+		}
+	]
+	translation	1.47 1.275 0
+}
+Transform {
+	children [
+		USE	khung
+	]
+	scale 1.667 1 1
+	rotation 0 0 1 -0.13
+	translation	0.5 1.65 0
+}
+Transform {
+	children [
+		USE	khung
+	]
+	scale 0.73 1 1
+	rotation 0 0 1 -0.305
+	translation -1 1.65 0
+}
+
+Transform {
+	children [
+		USE	khung
+	]
+	scale 0.167 1 1
+	rotation 0 0 1 -2.35
+	translation 0.2 1.5 0
+}

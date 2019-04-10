@@ -1,0 +1,225 @@
+#VRML V2.0 utf8
+
+
+#Bục này được đặt Sát vào tường
+
+#Ô Giữa Dưới
+Shape {
+	appearance Appearance {
+		material Material {
+			diffuseColor 0.2 0.1 0
+		}
+	}
+	geometry Box {
+		size 0.6 0.7 0.85
+	}
+}
+#Trang Trí của Ô Giữa Dưới
+Transform {
+	children [
+		Transform {
+			children DEF hoaVan Shape {
+				appearance Appearance {
+					material Material {
+						diffuseColor 1 1 1
+					}
+				}
+				geometry Box {
+					size 0.4 0.05 0
+				}
+			}
+			translation	0 0 0.426
+		}
+		Transform {
+			children USE hoaVan
+			translation	0 0.1 0.426
+		}
+		Transform {
+			children USE hoaVan
+			translation	0 0.2 0.426
+		}
+		Transform {
+			children USE hoaVan
+			translation	0 -0.1 0.426
+		}
+		Transform {
+			children USE hoaVan
+			translation	0 -0.2 0.426
+		}
+	]
+}
+
+#Bục Dưới 2 Bên
+Transform {
+	children [
+		DEF buc2ben Shape {
+			appearance Appearance {
+				material Material {
+					diffuseColor 0.2 0.1 0
+				}
+			}
+			geometry Box {
+				size 1.9 0.7 0.85
+			}
+		}
+	]
+	translation 1.25 0 0
+}
+Transform {
+	children USE buc2ben
+	translation	-1.25 0 0
+}
+#Hoa Văn
+Transform {
+	children [
+		Transform {
+			children DEF hoaVanSoc Shape {
+			   appearance Appearance {
+				   material	Material {
+					   diffuseColor	0 0 0
+				   }
+			   }
+			   geometry	Box	{
+				   size	0.02 0.7 0
+			   }
+			}
+			translation	0.3 0 0.426
+		}
+		Transform {
+			children USE hoaVanSoc
+			translation	-0.3 0 0.426
+		}
+		Transform {
+			children USE hoaVanSoc
+			translation	1.6 0 0.426
+		}
+		Transform {
+			children USE hoaVanSoc
+			translation	-1.6 0 0.426
+		}
+	]
+}
+
+#Bục Vải Đỏ
+Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					diffuseColor 0.8 0 0
+					emissiveColor 0.5 0 0
+				}
+			}
+			geometry Extrusion {
+				crossSection [-1.6 -0.425,-1.6 0.425,1.6 0.425,1.6 -0.425,-1.6 -0.425]
+				spine [0 0 0, 0 0.1 0]
+				solid FALSE
+				scale [1 1, 0.95 0.95]
+			}
+		}
+	]
+	translation	0 0.35 0
+}
+
+#Kính Bảo Vệ
+Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					diffuseColor 1 1 1
+					transparency 0.8
+				}
+			}
+			geometry Box {
+			   size	3.2 2.2 0.85
+			}
+		}
+	]
+	translation	0 1.45 0
+}
+#Cột Trụ 2 bên Tủ
+Transform {
+	children DEF cotTru Shape {
+		appearance Appearance {
+			material Material {
+				diffuseColor 0.2 0.1 0
+			}
+		}
+		geometry Box {
+			size 0.6 2.2 0.85
+		}
+	}
+	translation 1.9 1.45 0
+}
+Transform {
+	children USE cotTru
+	translation	-1.9 1.45 0
+}
+
+#Phần Trên
+Transform {
+	children Shape {
+		appearance Appearance {
+			material Material {
+				diffuseColor 0.2 0.1 0
+			}
+		}
+		geometry Box {
+			size 4.4 0.7 0.85
+		}
+	}
+	translation	0 2.9 0
+}
+
+#Hoa Van
+Transform {
+	children Shape {
+		appearance Appearance {
+			material Material {
+				diffuseColor 0 0 0
+			}
+		}
+		geometry Box {
+			size 0.6 0.02 0
+		}
+	}
+	translation	1.9 1.45 0.426
+}
+Transform {
+	children Shape {
+		appearance Appearance {
+			material Material {
+				diffuseColor 0 0 0
+			}
+		}
+		geometry Box {
+			size 0.6 0.02 0
+		}
+	}
+	translation	-1.9 1.45 0.426
+}
+Transform {
+	children USE hoaVanSoc
+	translation	0 2.9 0.426
+}
+
+#Đèn
+Transform {
+	children Inline	{
+		url	["Den.wrl"]
+	}
+	translation	0 2.6 0
+}
+Transform {
+	children Inline	{
+		url	["Den.wrl"]
+	}
+	translation	1.2 2.6 0
+}
+Transform {
+	children DEF g Inline	{
+		url	["Den.wrl"]
+	}
+	translation	-1.2 2.6 0
+}

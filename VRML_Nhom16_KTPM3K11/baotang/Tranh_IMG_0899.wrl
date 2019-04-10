@@ -1,0 +1,19 @@
+#VRML V2.0 utf8
+
+#VRML V2.0 utf8
+
+#Lòng Khung
+Shape {
+	appearance Appearance {
+		texture	ImageTexture {
+			url	["image/IMG_0899.jpg"]
+		}
+	}
+	geometry Box {
+		size 1.15 1.55 0
+	}
+}
+#Khung Tranh
+Inline {
+	url	["KhungVienTranh.wrl"]
+}

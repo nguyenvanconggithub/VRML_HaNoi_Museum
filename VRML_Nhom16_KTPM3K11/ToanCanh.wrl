@@ -1,0 +1,878 @@
+#VRML V2.0 utf8
+
+#nền bảo tàng
+Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				texture	ImageTexture {
+					 url ["hinhanh/NenGach.jpg"]
+					 repeatS TRUE
+					 repeatT TRUE
+				}
+				textureTransform TextureTransform {
+					scale 50 50
+				}
+				material Material {
+
+				}
+			}
+			geometry Box {
+				size 50 0.05 52
+			} 
+		}
+	]
+}
+
+#hàng rào sau bảo tàng
+Transform {
+	children [
+		Inline {
+			url	"HangRao/50metHangRao.wrl"
+		}
+	]
+	translation	19.8 0.85 -25.75
+	
+}
+
+#Hàng rào bên phải bảo tàng
+Transform {
+	children [
+		Inline {
+			url	"HangRao/50metHangRao.wrl"
+		}
+	]
+	translation	24.75 0.85 18.8
+	rotation 0 1 0 -1.57
+	
+}
+
+#hàng ròa bên trái
+Transform {
+	children [
+		Inline {
+			url	"HangRao/50metHangRao.wrl"
+		}
+	]
+	translation	-24.75 0.85 -20.8
+	rotation 0 1 0 1.57	
+}
+
+#hàng rào trước bảo tàng
+
+	#hàng rào bên phải cổng phải
+DEF hr Group {
+	children [
+		DEF cot Transform {
+			children [
+				Inline {
+					url	["HangRao/TruHangRao.wrl"]
+				}
+			]
+			translation	24.7 0.9 23.9
+		}
+		DEF hangrao Transform {
+			children [
+				Inline {
+					url	["HangRao/hangRao.wrl"]
+				}
+			]
+			translation	22.3 0.4 23.9
+	
+		}
+	]
+}
+Transform {
+	children [
+		USE	hr
+	]
+	translation	 -5 0 0
+}
+
+#hàng rào giữa 2 cổng
+Transform {
+	children [
+		USE	cot
+	]
+	translation	-25 0 0
+}
+Transform {
+	children [
+		USE	hangrao
+	]
+	translation	-33 0 0
+	scale 1.65 1 1
+}
+Transform {
+	children [
+		USE	hangrao
+	]
+	translation	-41 0 0
+	scale 1.65 1 1
+}
+# hàng rào bên trái cổng trái
+Transform {
+	children [
+		USE	cot
+	]
+	translation	-45 0 0
+}
+Transform {
+	children [
+		USE	hangrao
+	]
+	translation	 -40 0 0
+}
+Transform {
+	children [
+		USE	hangrao
+	]
+	translation	 -43.3 0 0
+	scale 0.93 1 1
+}
+
+
+
+#bể nước trước bảo tàng
+Transform {
+	children [
+		Inline {
+			url	"AoTruocBaoTang/ao.wrl"
+		}
+	]
+	translation	0 0.33 7
+	scale 0.5 0.5 0.5
+}
+
+#cột cờ
+
+Transform {
+	children [
+		Inline
+		{
+			url	"CotCo/CotCoToQuoc.wrl"
+		}
+	]
+	translation	0 1.5 15
+	scale 1 0.9 1
+	rotation 0 1 0 0.3
+}
+
+Transform {
+	children [
+		Inline {
+			url	"CotCo/Cot.wrl"
+		}
+	]
+	translation	0.7 1.5 15
+	scale 1 0.9 1
+}
+Transform {
+	children [
+		Inline {
+			url	"CotCo/Cot.wrl"
+		}
+	]
+	translation	-0.7 1.5 15
+	scale 1 0.9 1
+}
+
+#nhà để xe phải
+Transform {
+	children [
+		Inline {
+			url	["NhaDeXe/toancanhnx.wrl"]
+		}
+	]
+	translation	23 1 21
+	scale 0.5 0.8 0.5
+}
+
+
+#nhà để xe trái
+Transform {
+	children [
+		Inline {
+			url	["NhaDeXe/toancanhnx.wrl"]
+		}
+	]
+	translation	-23 1 6
+	scale 0.5 0.8 0.5
+	rotation 0 1 0 3.14
+}
+
+#bồn cây phải
+Transform {
+	children [
+		Inline {
+			url	"BonCay.wrl"
+		}
+	]
+	translation	15 0.2 8.5
+	scale 1 1 0.7
+}
+
+#bồn cây trái
+Transform {
+	children [
+		Inline {
+			url	"BonCay.wrl"
+		}
+	]
+	translation	-18 0.2 8.5
+	scale 1 1 0.7
+}
+
+
+#bot bảo vệ
+Transform {
+	children [
+		Inline {
+			url	["BotBaoVe/BotBaoVe.wrl"]
+		}
+	]
+	translation	15.5 1 15.8
+	scale 0.7 0.7 0.7
+	rotation  0 1 0 -1.57
+}
+
+#cổng bên phải 
+Transform {
+	children [
+		Inline {
+			url	["CongBaoTang/ToanCanhCong.wrl"]
+		}
+	]
+	 translation 14.6 0.025 24
+	 rotation 0 1 0 3.14
+	 
+}
+
+#cổng trái
+Transform {
+	children [
+		Inline {
+			url	["CongBaoTang/ToanCanhCong.wrl"]
+		}
+	]
+	 translation -8.3 0.025 24
+	 rotation 0 1 0 3.14
+	 
+}
+
+#bia đá giữa hai cổng
+
+Transform {
+	children [
+		Inline {
+			url	["BiaDa.wrl"]
+		}
+	]
+	translation	0 0.15 24.5
+}
+
+#bồn cỏ nằm ngang bên trái 
+Transform {
+	children [
+		Inline {
+			url	"BonCoTrai.wrl"
+		}
+	]
+	translation	 -20.8 0.075 22.3
+}
+#bồn cỏ nằm ngang bên trái 
+Transform {
+	children [
+		Inline {
+			url	"BonCoTrai.wrl"
+		}
+	]
+	rotation 0 1 0 -1.57
+	translation	-20 0.075 -13.8
+	scale 3 1 3.4
+}
+#bồn cỏ nằm ngang bên trái 
+Transform {
+	children [
+		Inline {
+			url	"BonCoPhai.wrl"
+		}
+	]
+	translation	 20.8 0.075 22.3
+}
+#bồn cỏ nằm ngang bên trái 
+Transform {
+	children [
+		Inline {
+			url	"BonCoPhai.wrl"
+		}
+	]
+	rotation 0 1 0 1.57
+	translation	20 0.075 -13.8
+	scale 3 1 3.4
+}
+
+#bồn cây bên phải cột cờ
+Transform {
+	children [
+		Inline {
+			url	["CayCanhCotCo.wrl"]
+		}
+	]
+	translation	8 0.035 12
+}
+#bồn cây bên trai cột cờ
+Transform {
+	children [
+		Inline {
+			url	["CayCanhCotCo.wrl"]
+		}
+	]
+	translation	-8 0.035 12
+}
+
+#luống cây trước cột cờ
+Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				texture	ImageTexture {
+					url	"hinhanh/LuongCay.jpg"
+				}
+				textureTransform TextureTransform {
+					scale 8 2
+				}
+			}
+			geometry Box {
+				size 8 0.3 3
+			}
+		}
+	]
+	translation	0 0.15 18.5
+}
+
+#người thăm quan 1
+Transform {
+	children [
+		Inline {
+			url	"NguoiThamQuan.wrl"
+		}
+	]
+	translation	12 1.2 3
+	scale 0.4 0.4 0.4
+	rotation 0 1 0 3.14
+}
+#người thăm quan 2
+Transform {
+	children [
+		Inline {
+			url	"NguoiThamQuan.wrl"
+		}
+	]
+	translation	-12 1.2 3
+	scale 0.4 0.4 0.4
+
+}
+#người thăm quan 3
+Transform {
+	children [
+		Inline {
+			url	"NguoiThamQuan.wrl"
+		}
+	]
+	translation	18 1.2 20
+	rotation 0 1 0 1.57
+	scale 0.4 0.4 0.4
+
+}
+
+#chậu cây cảnh hình vuông
+Transform {
+	children [
+		Inline {
+			url	["ChauCayHinhVuong.wrl"]
+		}
+	]
+	translation	2.5 0 6
+	scale 0.6 0.6 0.6
+}
+#chậu cây cảnh hình vuông
+Transform {
+	children [
+		Inline {
+			url	["ChauCayHinhVuong.wrl"]
+		}
+	]
+	translation	-2.5 0 6
+	scale 0.6 0.6 0.6
+}
+
+#chậu hoa hình tròn bên phải
+Transform {
+	children [
+		Inline {
+			url	["ChauHoaHinhTron.wrl"]
+		}
+	]
+	translation	7 0 -1.8
+	scale 0.6 0.6 0.6
+}
+#chậu hoa hình tròn bên trái
+Transform {
+	children [
+		Inline {
+			url	["ChauHoaHinhTron.wrl"]
+		}
+	]
+	translation	-7 0 -1.8
+	scale 0.6 0.6 0.6
+}
+
+#chậu hoa trên hiên bảo tàng
+Transform {
+	children [
+		Inline {
+			url	["ChauHoaHinhTron.wrl"]
+		}
+	]
+	translation	-4.5 0.5 -4.1
+	scale 0.6 0.6 0.6
+}
+
+Transform {
+	children [
+		Inline {
+			url	["ChauHoaHinhTron.wrl"]
+		}
+	]
+	translation	4.5 0.5 -4.3
+	scale 0.6 0.6 0.6
+}
+
+# nền trước cổng bảo tàng
+Transform {
+	children[
+	   Shape {
+		   appearance Appearance {
+			   texture	ImageTexture {
+					 url ["hinhanh/NenGach.jpg"]
+					
+				}
+				textureTransform TextureTransform {
+					scale 30 10
+				}
+		   }
+		   geometry	Box	
+		   {
+			   size	30 0.05 10
+		   }
+	   }
+	]
+	translation	0 0.025 31
+}
+
+#va chạm
+NavigationInfo { 
+	avatarSize [0.25, 1.2, 0.25]
+	headlight TRUE
+	speed 1.0
+	visibilityLimit 0.0
+}
+
+
+#ánh sáng chiều từ trên xuống
+DirectionalLight {
+	direction 0 -1 0
+	intensity 0.3
+	color 1 1 1
+}
+
+#bảo tàng
+
+Transform {
+	children [
+		Inline {
+			url	"baotang/nhaChinh.wrl"
+		}
+	]
+	translation	0 0.055 -12	 
+}
+
+DEF nutNhom Group {
+	children [
+		DEF	nut1 Transform {
+			children [
+				Shape {
+					appearance Appearance {
+						texture	ImageTexture {
+							url	["baotang\image\1.PNG"]
+						}
+					}
+					geometry Cylinder {
+						height 0.05
+						radius 0.05
+						top	TRUE
+						bottom TRUE
+						side TRUE
+					 }
+				}
+				DEF	n1 TouchSensor {
+					enabled	TRUE
+				}
+
+			]
+			rotation 1 0 0 1.57
+			translation	-5.4 1.435 -8
+		}
+		DEF	nut2 Transform {
+			children [
+				Shape {
+					appearance Appearance {
+						texture	ImageTexture {
+							url	["baotang\image\2.PNG"]
+						}
+					}
+					geometry Cylinder {
+						height 0.05
+						radius 0.05
+						top	TRUE
+						bottom TRUE
+						side TRUE
+					 }
+				}
+				DEF	n2 TouchSensor {
+					enabled	TRUE
+				}
+
+			]
+			rotation 1 0 0 1.57
+			translation	-5.4 1.635 -8
+		}
+		DEF	nut3 Transform {
+			children [
+				Shape {
+					appearance Appearance {
+						texture	ImageTexture {
+							url	["baotang\image\3.PNG"]
+						}
+					}
+					geometry Cylinder {
+						height 0.05
+						radius 0.05
+						top	TRUE
+						bottom TRUE
+						side TRUE
+					 }
+				}
+				DEF	n3 TouchSensor {
+					enabled	TRUE
+				}
+
+			]
+			rotation 1 0 0 1.57
+			translation	-5.4 1.835 -8
+		}
+		DEF	nut4 Transform {
+			children [
+				Shape {
+					appearance Appearance {
+						texture	ImageTexture {
+							url	["baotang\image\4.PNG"]
+						}
+					}
+					geometry Cylinder {
+						height 0.05
+						radius 0.05
+						top	TRUE
+						bottom TRUE
+						side TRUE
+					 }
+				}
+				DEF	n4 TouchSensor {
+					enabled	TRUE
+				}
+
+			]
+			rotation 1 0 0 1.57
+			translation	-5.4 2.035 -8
+		}
+	]
+}
+
+Transform {
+	children [USE nutNhom ]
+	translation	0 4 0
+}
+Transform {
+	children [USE nutNhom ]
+	translation	0 8 0
+}
+Transform {
+	children [USE nutNhom ]
+	translation	0 12 0
+}
+
+Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					diffuseColor 1 0 0
+				}
+			}
+			geometry Box {
+				size 0 0 0
+			}
+		}
+		DEF thangTang1 ProximitySensor	{
+		   #size	3 3 2
+			size 3 3 3.5
+		}
+	]
+	translation	 -5.7 1.435 -6.5
+}
+Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					diffuseColor 0 1 0
+				}
+			}
+			geometry Box {
+				size 0 0 0
+			}
+		}
+		DEF thangTang2 ProximitySensor	{
+		   #size	3 3 2
+			size 3 3 3.5
+		}
+	]
+	translation	 -5.7 6 -6.5
+}
+Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					diffuseColor 0 0 1
+				}
+			}
+			geometry Box {
+				size 0 0 0
+			}
+		}
+		DEF thangTang3 ProximitySensor	{
+		   #size	3 3 2
+			size 3 3 3.5
+		}
+	]
+	translation	 -5.7 9.8 -6.5
+}
+Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					diffuseColor 1 1 0
+				}
+			}
+			geometry Box {
+				size 0 0 0
+			}
+		}
+		DEF thangTang4 ProximitySensor	{
+		   #size	3 3 2
+			size 3 3 3.5
+		}
+	]
+	translation	 -5.7 14 -6.5
+}
+Transform {
+	children [Inline {
+		url	["item\nguoi.wrl"]
+	}]
+	translation	-5.5 20.55 -19
+}
+
+DEF	js Script {
+	eventIn	SFBool goFromOne
+	eventIn	SFBool goFromTwo
+	eventIn	SFBool goFromThree
+	eventIn	SFBool goFromFour
+
+	eventIn	SFBool goFloorOne
+	eventIn	SFBool goFloorTwo
+	eventIn	SFBool goFloorThree
+	eventIn	SFBool goFloorFour
+
+	field SFVec3f tang1 -12 1.4 33
+	field SFVec3f tang2 -12 5.4 33
+	field SFVec3f tang3 -12 9.4 33
+	field SFVec3f tang4 -12 13.4 33
+
+	field SFVec3f curentView -12 1.4 33
+	eventOut SFVec3f Go1
+	eventOut SFVec3f Go2
+	eventOut SFVec3f Go3
+	eventOut SFVec3f Go4
+
+	url	"javascript:
+
+	function goFromOne(val){
+		if(val == true){
+			tang1[0] = curentView[0];
+			tang1[1] = curentView[1];
+			tang1[2] = curentView[2];
+
+			tang2[0] = curentView[0];
+			tang2[1] = curentView[1] + 4;
+			tang2[2] = curentView[2];
+
+			tang3[0] = curentView[0];
+			tang3[1] = curentView[1] + 8;
+			tang3[2] = curentView[2];
+
+			tang4[0] = curentView[0];
+			tang4[1] = curentView[1] + 12;
+			tang4[2] = curentView[2];
+
+		}
+	}
+	function goFromTwo(val){
+		if(val == true){
+			tang2[0] = curentView[0];
+			tang2[1] = curentView[1];
+			tang2[2] = curentView[2];
+
+			tang1[0] = curentView[0];
+			tang1[1] = curentView[1] - 4;
+			tang1[2] = curentView[2];
+
+			tang3[0] = curentView[0];
+			tang3[1] = curentView[1] + 4;
+			tang3[2] = curentView[2];
+
+			tang4[0] = curentView[0];
+			tang4[1] = curentView[1] + 8;
+			tang4[2] = curentView[2];
+
+		}
+	}
+	function goFromThree(val){
+		if(val == true){
+			tang3[0] = curentView[0];
+			tang3[1] = curentView[1];
+			tang3[2] = curentView[2];
+
+			tang1[0] = curentView[0];
+			tang1[1] = curentView[1] -8;
+			tang1[2] = curentView[2];
+
+			tang2[0] = curentView[0];
+			tang2[1] = curentView[1] - 4;
+			tang2[2] = curentView[2];
+
+			tang4[0] = curentView[0];
+			tang4[1] = curentView[1] + 4;
+			tang4[2] = curentView[2];
+
+		}
+	}
+	function goFromFour(val){
+		if(val == true){
+			tang4[0] = curentView[0];
+			tang4[1] = curentView[1];
+			tang4[2] = curentView[2];
+
+			tang2[0] = curentView[0];
+			tang2[1] = curentView[1] - 8;
+			tang2[2] = curentView[2];
+
+			tang3[0] = curentView[0];
+			tang3[1] = curentView[1] - 4;
+			tang3[2] = curentView[2];
+
+			tang1[0] = curentView[0];
+			tang1[1] = curentView[1] - 12;
+			tang1[2] = curentView[2];
+
+		}
+	}
+	function goFloorOne(val){
+		if(val == true){
+			Go1[0] = tang1[0];
+			Go1[1] = tang1[1];
+			Go1[2] = tang1[2];
+
+			curentView[0] = Go1[0];
+			curentView[1] = Go1[1];
+			curentView[2] = Go1[2];
+		}
+	}
+	function goFloorTwo(val){
+		if(val == true){
+			Go2[0] = tang2[0];
+			Go2[1] = tang2[1];
+			Go2[2] = tang2[2];
+
+			curentView[0] = Go2[0];
+			curentView[1] = Go2[1];
+			curentView[2] = Go2[2];
+		}
+	}
+	function goFloorThree(val){
+		if(val == true){
+			Go3[0] = tang3[0];
+			Go3[1] = tang3[1];
+			Go3[2] = tang3[2];
+
+			curentView[0] = Go3[0];
+			curentView[1] = Go3[1];
+			curentView[2] = Go3[2];
+		}
+	}
+	function goFloorFour(val){
+		if(val == true){
+			Go4[0] = tang4[0];
+			Go4[1] = tang4[1];
+			Go4[2] = tang4[2];
+
+			curentView[0] = Go4[0];
+			curentView[1] = Go4[1];
+			curentView[2] = Go4[2];
+		}
+	}
+	"
+}
+
+#góc nhìn
+DEF vi Viewpoint {
+	position -12 1.4 33
+}
+
+
+ROUTE thangTang1.isActive TO js.goFromOne
+ROUTE thangTang2.isActive TO js.goFromTwo
+ROUTE thangTang3.isActive TO js.goFromThree
+ROUTE thangTang4.isActive TO js.goFromFour
+
+ROUTE n1.isActive	TO js.goFloorOne
+ROUTE js.Go1 TO	vi.position
+
+ROUTE n2.isActive	TO js.goFloorTwo
+ROUTE js.Go2 TO	vi.position
+
+ROUTE n3.isActive	TO js.goFloorThree
+ROUTE js.Go3 TO	vi.position
+
+ROUTE n4.isActive	TO js.goFloorFour
+ROUTE js.Go4 TO	vi.position
+
+
+
+
+
+
+
+

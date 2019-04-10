@@ -1,0 +1,261 @@
+#VRML V2.0 utf8
+
+
+# Cam ung va cham
+DEF col Collision {
+	children [
+		Sound { 
+			source DEF ac AudioClip { 
+				loop FALSE 
+				pitch 1.0 
+				url "ah.wav" 
+			} 
+		}
+	   DEF nguoi Transform {
+	children [
+		# Đầu
+Transform {
+	scale 1 1.2 1
+	children [
+		Shape {
+			geometry Sphere	{
+				radius .13
+			}
+			appearance Appearance {
+				material Material {
+					diffuseColor .52 .32 .25
+				}
+			}
+		}
+	]
+}
+#Cổ
+Transform {
+	translation	0 -.13 0
+	children [
+		Shape {
+			geometry Cylinder {
+				height .1
+				radius .07
+			}
+			appearance Appearance {
+				material Material {
+					diffuseColor .52 .32 .25
+				}
+			}
+
+		}
+	]
+}
+#Thân
+Transform {
+	translation	0 -.47 0
+	children [
+		Shape {
+			geometry Box {
+				size .4 .6	.15
+			}
+			appearance Appearance {
+				material Material {
+					diffuseColor .23 .2 .43
+				}
+			}
+		}
+	]
+}
+# Tay
+DEF taytrai Transform {
+	children [
+		
+		Transform {
+			translation	0.3 -.35 0
+			rotation 0 0 1 .785
+			children [
+				Shape {
+					geometry Box {
+						size .07 .4 .06
+					}
+				}
+			]
+		}
+		
+		Transform {
+			translation	0.42 -.55 0.1
+			rotation 1 0 0 -.785
+			children [
+				Shape {
+					geometry Cylinder {
+						radius 0.03
+						height 0.3
+					}
+				}
+			]
+		}
+		
+	]
+}
+
+DEF tayphai Transform {
+	children [
+		Transform {
+			translation	-.3 -.35 0
+			rotation 0 0 1 -.785
+			children [
+				Shape {
+					geometry Box {
+						size .07 .4 .06
+					}
+				}
+			]
+		}
+		Transform {
+			translation	-.42 -.55 0.1
+			rotation 1 0 0 -.785
+			children [
+				Shape {
+					geometry Cylinder {
+						radius 0.03
+						height 0.3
+					}
+				}
+			]
+		}
+	]
+}
+
+# Chân
+DEF chantrai Transform {
+	children [
+	 Transform {
+			translation	-.15 -.9 0
+			children [
+				Shape {
+					geometry Box {
+						size .1 .4 .1
+					}
+				}
+			]
+		}
+		
+
+		Transform {
+			translation	-.15 -1.25 0
+			children [
+				Shape {
+					geometry Cylinder {
+						radius 0.05
+						height 0.4
+					}
+				}
+			]
+		}
+		
+		Transform {
+			translation	-.15 -1.45 0.05
+			children [
+				Shape {
+					geometry Box {
+						size .1 .05 .2
+					}
+				}
+			]
+		}
+	
+
+	]
+}
+
+DEF chanphai Transform {
+	children [
+	    Transform {
+			translation	.15 -.9 0
+			children [
+				Shape {
+					geometry Box {
+						size .1 .4 .1
+					}
+				}
+			]
+		}
+		 Transform {
+			translation	.15 -1.25 0
+			children [
+				Shape {
+					geometry Cylinder {
+						radius 0.05
+						height 0.4
+					}
+				}
+			]
+		}
+			Transform {
+			translation	.15 -1.45 0.05
+			children [
+				Shape {
+					geometry Box {
+						size .1 .05 .2
+					}
+				}
+			]
+		}
+	]
+}	
+	]
+}
+
+	]
+}
+ROUTE col.collideTime TO ac.set_startTime
+
+
+
+
+
+
+
+
+#di chuyển chân, tay
+DEF	time TimeSensor {
+	cycleInterval 2
+	loop TRUE
+}
+DEF	giotraiquay OrientationInterpolator {
+	key	[0.0,0.33, .66, 1]
+	keyValue [1 0 0 0,1 0 0 -.2,1 0 0 .2,1 0 0 0]
+}
+DEF	giophaiquay OrientationInterpolator {
+	key	[0.0,0.33, .66, 1]
+	keyValue [1 0 0 0,1 0 0 .2,1 0 0 -.2,1 0 0 0]
+}
+
+ROUTE time.fraction_changed	TO giotraiquay.set_fraction
+ROUTE time.fraction_changed	TO giophaiquay.set_fraction
+
+ROUTE giotraiquay.value_changed TO	chantrai.rotation
+ROUTE giophaiquay.value_changed TO	chanphai.rotation
+
+ROUTE giotraiquay.value_changed TO	taytrai.rotation
+ROUTE giophaiquay.value_changed TO	tayphai.rotation
+
+
+
+#di chuyển cơ thể
+DEF	timechay TimeSensor	{
+	cycleInterval 40
+	loop TRUE
+}
+DEF	chay PositionInterpolator {
+	key	[0,.25,.5,.75,1]
+	keyValue [0 0 0 ,0  0 5,0  0 10,0  0 5,0  0 0 ]
+}
+DEF	quay OrientationInterpolator {
+	key	[0,.49,.5,.99,1]
+	keyValue [0 1 0 0,0 1 0 0,0 1 0 -3.14,
+		0 1 0 -3.14,0 1 0 0]
+}
+
+ROUTE timechay.fraction_changed	TO chay.set_fraction
+ROUTE chay.value_changed TO	nguoi.translation
+ROUTE timechay.fraction_changed	TO quay.set_fraction
+ROUTE quay.value_changed TO	nguoi.rotation
+

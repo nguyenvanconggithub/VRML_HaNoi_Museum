@@ -1,0 +1,213 @@
+#VRML V2.0 utf8
+
+# chiều doc bồn cây
+Transform {
+	children [
+		DEF doc Shape {
+			appearance Appearance {
+				material Material {
+
+				}
+			}
+			geometry Box {
+				size 0.2 0.3 20
+			}
+		}
+	]
+}
+
+Transform {
+	children [
+		USE	doc
+	]
+	translation	3 0 0
+}
+
+#chiều ngang bồn cây
+Transform {
+	children [
+		DEF ngang Shape {
+			appearance Appearance {
+				material Material {
+
+				}
+			}
+			geometry Box {
+				size 3.2 0.3 0.2
+			}	
+		}
+	]
+	translation	1.5 0 10
+}
+
+Transform {
+	children [
+		USE	ngang
+	]
+	translation 1.5 0 -10
+}
+
+#mặt cỏ trong bồn cây 
+Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				texture	ImageTexture {
+					url	"hinhanh/CoBonCay.jpg"
+				}
+				textureTransform TextureTransform {
+					scale 7 35
+				}
+			}
+			geometry Box {
+				size 2.8 0.01 20
+			}
+		}
+	]
+	translation	1.5 -0.145 0
+}
+
+#hàng cỏ dọc
+Transform {
+	children [
+		DEF codoc Shape {
+			appearance Appearance {
+				texture	ImageTexture {
+					url	"hinhanh/CoHangRao.jpg"
+					repeatS	TRUE
+					repeatT	TRUE
+				}
+				textureTransform TextureTransform {
+					scale 25 1  
+					center 0 0
+				}
+				material Material {
+
+				}
+			}
+			geometry Box {
+				size 19.8 0.5 0.15
+			}
+		}
+	]
+	rotation 0 1 0 1.57
+	translation	0.15 0.15 0
+}
+Transform {
+	children [
+		USE	codoc
+	]
+	rotation 0 1 0 1.57
+	translation	2.85 0.15 0
+}
+
+# hàng cỏ ngang
+
+Transform {
+	children [
+		DEF congang Shape {
+			appearance Appearance {
+				texture	ImageTexture {
+					url	"hinhanh/CoHangRao.jpg"
+				}
+				textureTransform TextureTransform {
+					scale 5 1
+				}
+			}
+			geometry Box {
+				size 2.57 0.5 0.15
+			}
+		}
+	]
+	translation	1.5 0.14 -9.8
+}
+
+Transform {
+	children [
+		USE	congang
+	]
+	translation 1.5 0.14 9.8
+}
+
+# cây trong bồn cây
+Transform {
+	children [
+		DEF Cay Inline {
+			url	["CayCanhHinhTron.wrl"]
+		}
+	]
+	translation	1.45 -0.1 -8
+	scale 0.8 0.8 0.8
+}
+Transform {
+	children [
+		USE	Cay
+	]
+	translation	1.45 -0.1 -5.2
+	scale 0.8 0.8 0.8
+}
+Transform {
+	children [
+		USE	Cay
+	]
+	translation	1.45 -0.1 -1.8
+	scale 0.8 0.8 0.8
+}
+
+Transform {
+	children [
+		USE	Cay
+	]
+	translation	1.45 -0.1 2.2
+	scale 0.8 0.8 0.8
+}
+Transform {
+	children [
+		USE	Cay
+	]
+	translation	1.45 0 5.1
+	scale 0.8 0.8 0.8
+}
+Transform {
+	children [
+		USE	Cay
+	]
+	translation	1.45 0 8
+	scale 0.8 0.8 0.8
+}
+
+# hàng đèn trong bồn cây
+	
+
+DEF hangden Group {
+	children [
+		Transform {
+			children [
+				DEF den Inline {
+					url	["DenDien.wrl"]
+				}
+			]
+			translation	1.5 0 -9.5
+			scale 0.7 0.7 0.7
+		}
+	
+		Transform {
+			children [
+				USE	den
+			]
+			translation	1.5 0 0
+			scale 0.7 0.7 0.7
+		}
+		Transform {
+			children [
+				USE	den
+			]
+			translation	1.5 0 9.5
+			scale 0.7 0.7 0.7
+		}
+	]
+}
+
+
+
+

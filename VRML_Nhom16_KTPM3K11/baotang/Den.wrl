@@ -1,0 +1,67 @@
+#VRML V2.0 utf8
+
+#Chụp đèn
+Shape {
+	appearance Appearance {
+		material Material {
+			diffuseColor 0.1 0.1 0
+		}
+	}
+	geometry Cone {
+		bottom FALSE
+		height 0.15
+		bottomRadius 0.2
+	}
+}
+#Mặt đèn
+Transform {
+	children Shape {
+		appearance Appearance {
+			material DEF mauDen Material {
+				diffuseColor 0.5 0.5 0.5
+				emissiveColor 1 1 1
+			}
+		}
+		geometry Cylinder {
+			radius 0.2
+			height 0.01
+		}
+	}
+	translation	0 -0.075 0
+}
+#Ánh Sáng
+DEF LightSource SpotLight {
+	direction 0 -1 0
+	radius 2
+	on FALSE
+}
+DEF	chamCongTacAct TouchSensor {
+}
+DEF	HanhDong Script	{
+	eventIn	SFBool chamCongTac
+	field SFBool Bat TRUE
+	eventOut SFBool	on
+	eventOut SFColor mau
+
+	url "javascript:			  
+	function chamCongTac(val){
+		if(val && !Bat){
+			on = true;
+			mau[0] = 1;
+			mau[1] = 1;
+			mau[2] = 1;
+			Bat = true;
+		}
+		else if(val && Bat){
+			on = false;
+			mau[0] = 0;
+			mau[1] = 0;
+			mau[2] = 0;
+			Bat = false;
+		}
+	}"
+}
+
+ROUTE chamCongTacAct.isActive TO HanhDong.chamCongTac
+ROUTE HanhDong.on TO LightSource.on
+ROUTE HanhDong.mau TO mauDen.emissiveColor

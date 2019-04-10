@@ -1,0 +1,42 @@
+#VRML V2.0 utf8
+
+#Rong 1
+Transform {
+	children Shape {
+		appearance Appearance {
+			texture ImageTexture {
+				url	"../image/HienVatTrungBayIMG/IMG_0829.png"
+			}
+		}
+		geometry Box {
+			size 3 1 0
+		}
+	}
+	translation	-4 0 0
+}
+
+#Linh Vật
+Shape {
+	appearance Appearance {
+		texture	ImageTexture {
+			url	"../image/HienVatTrungBayIMG/IMG_0882.png"
+		}
+	}
+	geometry Box {
+		size 1 1.4 0
+	}
+}
+#Rong 2
+Transform {
+	children Shape {
+		appearance Appearance {
+			texture ImageTexture {
+				url	"../image/HienVatTrungBayIMG/IMG_0829_2.png"
+			}
+		}
+		geometry Box {
+			size 3 1 0
+		}
+	}
+	translation	4 0 0
+}

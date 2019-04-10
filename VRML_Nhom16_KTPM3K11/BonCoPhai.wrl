@@ -1,0 +1,95 @@
+#VRML V2.0 utf8
+
+#nền cỏ
+Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				texture	ImageTexture {
+					 url ["hinhanh/Co1.jpg"]
+				}
+				textureTransform TextureTransform {
+					scale 8 4
+				}
+			}
+			geometry Box {
+				size 8 0.15 2.8
+			}
+		}
+	]
+}
+
+
+#hàng cỏ chiều rộng
+Transform {
+	 children [
+		 Shape {
+			 appearance Appearance {
+				 texture DEF hangco ImageTexture {
+					 url ["hinhanh/hangRaoCo.jpg"]
+				 }
+				 textureTransform TextureTransform {
+					 scale 16 1
+				 }
+
+			 }
+			 geometry Box {
+				 size 8 0.2 0.1
+			 }
+		 }
+	 ]
+	 translation 0 0.175 -1.35
+}
+
+#hàng cỏ chiều dài
+Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				texture	USE	hangco
+				textureTransform TextureTransform {
+					scale 7 1
+				}
+			}
+			geometry Box {
+				size 0.1 0.2 2.7
+			}
+		}
+	]
+	translation	-3.95 0.175 -0.05
+}
+
+#tường bao chiều rộng
+Transform {
+	children [
+		Shape {
+			appearance Appearance 
+			{
+				material Material {
+
+				}
+			}
+			geometry Box {
+				size 8.1 0.2 0.1
+			}
+		}
+	]
+	translation	-0.05 0.025 -1.45
+}
+#tường bao chiều dài
+Transform {
+	children [
+		Shape {
+			appearance Appearance 
+			{
+				material Material {
+
+				}
+			}
+			geometry Box {
+				size 0.1 0.2 2.8
+			}
+		}
+	]
+	translation	-4.05 0.025 0
+}

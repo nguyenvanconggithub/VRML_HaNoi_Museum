@@ -1,0 +1,26 @@
+#VRML V2.0 utf8
+
+#Bục Treo Tranh
+Shape {
+	appearance Appearance {
+		material Material {
+			diffuseColor 0.3 0 0
+		}
+	}
+	geometry Box {
+		size 2.5 0.3 0.6
+	}
+}
+Transform {
+	children Shape {
+		appearance Appearance {
+			material Material {
+				diffuseColor 0.4 0.4 0
+			}
+		}						  
+		geometry Box {
+			size 2.5 2.7 0.6
+		}
+	}
+	translation 0 1.5 0
+}

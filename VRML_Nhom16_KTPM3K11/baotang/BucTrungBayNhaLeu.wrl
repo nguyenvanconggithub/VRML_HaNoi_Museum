@@ -1,0 +1,13 @@
+#VRML V2.0 utf8
+
+#Bục Trưng bày nhà, lều,..
+Shape {
+	appearance Appearance {
+		material Material {
+			diffuseColor 0.9 0.9 0.9
+		}
+	}
+	geometry Box {
+		size 2.2 0.2 1.1
+	}
+}

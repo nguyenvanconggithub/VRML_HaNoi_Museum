@@ -1,0 +1,21 @@
+#VRML V2.0 utf8
+
+Billboard {
+	children Transform {
+		children Shape {
+			appearance Appearance {
+				texture ImageTexture {
+					url "../image/HienVatTrungBayIMG/IMG_0809.png"
+				}
+			}
+			geometry Box {
+				size 0.4 0.1 0
+			}
+		}
+		translation	0 0.5 0
+	}
+	axisOfRotation 0 1 0
+}
+Inline {
+	url	"../BucDonThap.wrl"
+}

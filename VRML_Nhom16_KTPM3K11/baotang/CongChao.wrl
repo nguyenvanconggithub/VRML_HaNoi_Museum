@@ -1,0 +1,81 @@
+#VRML V2.0 utf8
+
+#VRML V2.0 utf8
+
+#Cột Trái 1
+Transform {
+	children DEF cot Shape {
+		appearance Appearance {
+			material Material {
+				diffuseColor 1 0 0
+			}
+		}
+		geometry Box {
+			size 0.2 2.7 0.2
+		}
+	}
+	translation	-3 0 0
+}
+#Cột Trái 2
+Transform {
+	children USE cot
+	translation	-2 0 0
+}
+#Cột Phải 2
+Transform {
+	children USE cot
+	translation	2 0 0
+}
+#Cột Phải 1
+Transform {
+	children USE cot
+	translation	3 0 0
+}
+#Lời Chào
+Transform {
+	children Shape {
+		appearance Appearance {
+			material Material {
+				diffuseColor 1 0 0
+			}
+		}
+		geometry Box {
+			size 4.4 0.4 0.2
+		}
+	}
+	translation	0 1.25 0
+}
+#Thanh Trên Trái
+Transform {
+	children DEF thanhTren Shape {
+		appearance Appearance {
+			material Material {
+				diffuseColor 1 0 0
+			}
+		}
+		geometry Box {
+			size 1 0.2 0.2
+		}
+	}
+	translation	-2.5 1 0
+}
+Transform {
+	children USE thanhTren
+	translation	2.5 1 0
+}
+Transform {
+	children Shape {
+		appearance Appearance {
+			material Material {
+				diffuseColor 1 1 0
+			}
+		}
+		geometry Text {
+			string "VIỆT NAM - HÒA BÌNH - THỐNG NHẤT"
+			fontStyle FontStyle	{
+				size 0.25
+			}
+		}
+	}
+	translation	-1.75 1.2 0.11
+}

@@ -1,0 +1,220 @@
+#VRML V2.0 utf8
+
+
+Group {
+	children [
+				DEF MotMatBot Group{
+			children [
+				Transform {
+					children [
+						DEF	cot Shape {
+							appearance DEF m Appearance {
+								material Material {
+
+								}
+							}
+							geometry Box {
+								size 0.08 2.8 0.08
+							}
+						}
+					]
+				}
+				Transform {
+					children [
+						USE	cot
+					]
+					translation	2 0 0
+				}
+				Transform	{
+					children [
+						DEF	thanhngang Shape {
+							appearance USE m
+							geometry Box {
+								size 2 0.08 0.08
+							}
+
+						}
+					]
+					translation	1 -1.36 0
+				}
+				Transform	{
+					children [
+						USE	thanhngang
+					]
+					translation	1 1.1 0
+				}
+				Transform	{
+					children [
+						USE	thanhngang
+					]
+					translation	1 -0.35 0
+				}
+				Transform	{
+					children [
+						USE	thanhngang
+					]
+					translation	1 1.36 0
+				}
+
+				#tấm chắn dưới
+				Transform	{
+					children [
+						Shape {
+							appearance DEF MauTon Appearance {
+								material Material {
+									diffuseColor 0 0.384 0.255
+								}
+							}
+							geometry Box {
+								size 2 1.01 0.05
+							}
+						}
+					]
+					translation	1 -0.895 0 
+				}
+
+				#tấm chắn trên
+				Transform	{
+					children [
+						Shape {
+							appearance USE MauTon
+							geometry Box {
+								size 2 0.2 0.05
+							}
+						}
+					]
+					translation	1 1.24 0
+				}
+				# cửa kính
+				Transform {
+					children [
+						Shape {
+							appearance Appearance {
+								material Material {
+								transparency 0.8
+								}
+							}						  
+							geometry Box {
+								size 1.9 1.4 0.03
+							}
+						}
+					]
+					translation	1 0.4 0
+				}
+			]
+		}
+
+
+		#mặt bên
+		Transform	{
+			children [
+				USE	MotMatBot
+			]
+			rotation 0 1 0 1.57
+		}
+		Transform	{
+			children [
+				USE	MotMatBot
+			]
+			rotation 0 1 0 1.57
+			translation	2 0 0
+		}
+
+
+		#mặt cửa vào
+		Transform {
+			children [
+				USE	thanhngang
+			]
+			translation	1 -1.36 -2 
+		}
+		Transform	{
+			children [
+				USE	thanhngang
+			]
+			translation	1 1.1 -2
+		}
+		Transform	{
+			children [
+				USE	thanhngang
+			]
+				translation	1 1.36 -2
+		}
+		Transform	{
+			children [
+				Shape {
+					appearance USE MauTon
+					geometry Box {
+						size 2 0.2 0.05
+					}
+				}
+			]
+			translation	1 1.24 -2
+		}
+
+		# cửa
+		Transform {
+			children [
+				Inline {
+					url	"CuaBotMoDong.wrl"
+				}
+			]
+			translation	0.7 -0.1 -2
+			rotation 0 1 0 3.145
+		}
+
+
+
+		 #tấm chắn bên cửa
+		Transform {
+			children [
+				Shape {
+					appearance USE MauTon
+					geometry Box {
+						size 0.55 0.9 0.08
+					}
+				}
+			] 
+			translation	1.655 -0.895 -2
+		}
+		# tấm chắn trên cửa
+		Transform {
+			children [
+				Shape {
+					appearance Appearance {
+						material Material {
+							transparency 0.8
+						}
+				
+					}
+					geometry Box {
+						size 0.57 1.5 0.03
+					}
+				}
+			] 
+			translation	1.65 0.3 -2
+		}
+
+		#mái Bot
+
+		Transform {
+			children [
+				Shape {
+					appearance USE MauTon
+					geometry Box {
+						 size 2.6 0.3 2.4
+					}
+				}
+			]
+			translation	1 1.55 -1
+		}
+	   NavigationInfo {
+		   avatarSize [0., 1.6, 0.75]
+	   }
+	]
+}
+
+
+
+   
+	

@@ -1,0 +1,22 @@
+#VRML V2.0 utf8
+
+Group {
+	children [
+		DEF	gocQuay CylinderSensor {
+			minAngle -2.6
+			maxAngle 0
+		}
+		DEF	canhCong Transform {
+			children [
+				Inline {
+					url	"CanhCong.wrl"
+				}
+			]
+			center -1.4 0 0	
+		}
+		NavigationInfo {
+			avatarSize [0.25, 1.6, 0.75]
+		}
+	]
+}
+ROUTE gocQuay.rotation_changed  TO canhCong.rotation

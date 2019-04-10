@@ -1,0 +1,25 @@
+#VRML V2.0 utf8
+
+Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				texture	ImageTexture {
+					url	"..\hinhanh\CoDang.jpg"
+				}
+			}
+			geometry Box {
+				size 1.5 1 0.01
+			}
+		}
+	]
+	translation	0.81 6 0
+}
+Transform {
+	children [
+		Inline {
+			url "Cot.wrl"
+		}
+	]
+	scale 0.75 1 1
+}

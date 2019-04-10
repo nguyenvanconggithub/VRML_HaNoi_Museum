@@ -1,0 +1,137 @@
+#VRML V2.0 utf8
+
+#đáy trụ cổng
+Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+
+				}
+			}
+			geometry Box {
+				size 1 0.05 1
+			}
+		} 
+	]
+}
+
+Transform {
+	children [
+			Shape {
+				appearance Appearance {
+				material Material {
+
+				}
+			}
+			geometry Box {
+				size 0.8 0.1 0.8
+			}
+		} 
+	]
+	translation	0 0.075 0
+}
+
+#cột giữa trụ cổng
+Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+
+				}
+			}
+			geometry Box {
+				size 0.4 3 0.4
+			}
+		}
+	]
+	translation	0 1.62 0
+}
+
+#phần trên trụ cổng
+Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+
+				}
+			}
+			geometry Box {
+				size 0.8 0.1 0.8
+			}
+		}
+	]
+	translation	0 3.125 0
+}
+
+Transform {
+	children [
+		Inline {
+			url	"noiCot.wrl"
+		}
+	]
+	translation	-0.3 1.62 -0.3	
+}
+
+Transform {
+	children [
+		Inline {
+			url	"noiCot.wrl"
+		}
+	]
+
+	translation	0.3 1.62 0.3
+	rotation 0 1 0 3.14
+}
+Transform {
+	children [
+		Inline {
+			url	"noiCot.wrl"
+		}
+	]
+	translation	-0.3 1.62 0.3
+	rotation 0 1 0 1.57
+}
+Transform {
+	children [
+		Inline {
+			url	"noiCot.wrl"
+		}
+	]
+
+	translation	0.3 1.62 -0.3
+	rotation 0 1 0 -1.57
+}
+
+
+
+
+#Transform {
+#	children [
+#		Inline {
+#			url	"CongMoDong.wrl"
+
+#		}
+#	]
+#	translation	1.83 2.39 0.235
+
+	
+#}
+
+
+
+
+
+#Transform {			đèn cổng
+#	children [
+#		Shape {
+#			geometry Box {
+#				size 0.4 0.4 0.4
+#			}
+#		}
+#	]
+#	translation	0 3.325 0
+#}
+

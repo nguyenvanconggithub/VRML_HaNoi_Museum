@@ -1,0 +1,361 @@
+#VRML V2.0 utf8
+
+DEF nguoi Transform {
+	children [
+		#Đầu
+ Transform {
+	 children [
+		 Shape {
+			 appearance	Appearance {
+				 material Material {
+
+				 }
+			 }
+			 geometry Sphere {
+				 radius	0.3
+			 }
+		 }
+	 ]
+	 scale 1 1.3 1
+ }
+ #cổ
+ Transform {
+	 children [
+		 Shape {
+			 appearance	Appearance {
+				 material Material {
+
+				 }
+			 }
+			 geometry Cylinder {
+				 radius	0.1
+				 height	0.23
+			 }
+		 }
+	 ]
+	translation 0 -0.4 0
+ }
+
+ #thân
+ Transform {
+	 children [
+		 Shape {
+			  appearance	Appearance {
+				 material Material {
+
+				 }
+			 }
+			 geometry Extrusion	{
+				 crossSection [
+                           0.1185 0.2525,
+                           0.247 0.2545,
+                           0.2305 0.161,
+                           0.2325 0.108,
+                           0.139 0.11,
+                           0.143 0.1525,
+                           0.1225 0.2525,
+                           0.1185 0.2525,
+                         ]
+						 spine [0 0 0, 0 0.01 0]
+			 }
+		 }
+	 ]
+	 translation -1.1 -2.27 0.13
+
+	 rotation 1 0 0 -1.57
+	 scale 6 25 7
+ }
+
+ #tay phải
+
+ DEF tayPhai Transform {
+	 children [
+
+		  #vai phải 
+		 Transform {
+			children [
+				DEF vai Shape {
+					appearance	Appearance {
+						 material Material {
+
+						 }
+					 }
+					 geometry Sphere {
+						 radius	0.12
+					 }
+				}
+			]
+			translation	0.37 -0.6 0
+		}
+
+		 #bắp tay phải
+		 Transform {
+			 children [
+				 DEF bapTay Shape {
+					 appearance	Appearance {
+						material Material {
+
+						}
+					}
+					 geometry Cylinder {
+						 radius	0.055
+						 height	0.4
+					 }
+				 }
+			 ]
+			 translation 0.4 -0.75 0
+		 }
+
+		#điểm nối bắp tay với cẳng tay
+		 Transform {
+			 children [
+				 DEF diemNoiTay Shape {
+					 appearance	Appearance {
+						material Material {
+
+						}
+					}
+					 geometry Sphere {
+						 radius	0.055
+					 }
+				 }
+			 ]
+			 translation 0.4 -0.965 0
+		 }
+
+		 # cẳng tay
+		 Transform {
+			 children [
+				DEF cangTay Shape {
+					 appearance	Appearance {
+						material Material {
+
+						}
+					}
+					 geometry Cylinder {
+						 radius	0.054
+						 height	0.5
+					 }
+				 }
+			 ]
+			 translation 0.4 -1.21 0.1
+			 rotation 1 0 0 -0.4
+		 }
+	 ]
+	 center	0.4 -0.6 0 
+ }
+
+ #tay trái
+ DEF tayTrai Transform {
+	 children [
+
+		  Transform {
+			 children [
+				 USE vai
+			 ]
+			 translation	-0.365 -0.62 0
+		 }
+
+		 #bắp tay
+		 Transform {
+			 children [
+				 USE bapTay
+			 ]
+			 translation -0.4 -0.75 0
+		 }
+
+		 Transform {
+			 children [
+				 USE diemNoiTay
+			 ]
+			 translation -0.4 -0.95 0
+		 }
+
+		 Transform {
+			 children [
+				 USE cangTay
+			 ]
+			 translation -0.4 -1.21 0.1
+			 rotation 1 0 0 -0.4
+		 }
+	 ]
+	 center	-0.4 -0.6 0
+ }
+
+ #chân phải
+ DEF chanPhai Transform {
+	 children [
+
+		#bắp chân
+		 Transform {
+			 children [
+				DEF bapChan Shape {
+					 appearance	Appearance {
+						 material Material {
+
+						 }
+					 }
+					 geometry Cylinder {
+						 radius	0.1
+						 height	0.6
+					 }
+				 }
+			 ]
+			 translation 0.17 -1.8 0
+		 }
+
+		 #điểm nối bắp và cẳng chân
+		 Transform {
+			 children [
+				DEF diemNoichan Shape {
+					 appearance	Appearance {
+						 material Material {
+
+						 }
+					 }
+					 geometry Sphere {
+						 radius	0.1
+					 }
+				 }
+			 ]
+			 translation 0.17 -2.1 0
+			 rotation 1 0 0 -0.3
+		 }
+
+		 #cẳng chân
+		 Transform {
+			 children [
+				DEF cangChan Shape {
+					 appearance	Appearance {
+						 material Material {
+
+						 }
+					 }
+					 geometry Cylinder {
+						 radius	0.085
+						 height	0.6
+					 }
+				 }
+			 ]
+			 translation 0.17 -2.4 -0.05
+			 rotation 1 0 0 0.15
+		 }
+
+		 #bàn chân
+		 Transform {
+			 children [
+				DEF banChan Shape {
+					 appearance	Appearance {
+						 material Material {
+
+						 }
+					 }
+					 geometry Box {
+						 size 0.13 0.07 0.25
+					 }
+				 }
+			 ]
+			 translation 0.17 -2.68 -0.025
+		 }
+	 ]
+	 center	0.17 -1.34 0
+ }
+
+ DEF chanTrai Transform	{
+	 children [
+
+		 Transform {
+			 children [
+				 USE bapChan
+			 ]
+			 translation -0.17 -1.8 0
+		 }
+
+		 #điểm nối bắp và cẳng chân
+		 Transform {
+			 children [
+				 USE diemNoichan
+			 ]
+			 translation -0.17 -2.1 0
+			 rotation 1 0 0 -0.3
+		 }
+
+		 #cẳng chân
+		 Transform {
+			 children [
+				 USE cangChan
+			 ]
+			 translation -0.17 -2.4 -0.05
+			 rotation 1 0 0 0.15
+		 }
+
+		 #bàn chân
+		 Transform {
+			 children [
+				 USE banChan
+			 ]
+			 translation -0.17 -2.68 -0.025
+		 }
+	 ]
+	  center  -0.17 -1.34 0
+ }
+	]
+}
+
+
+ #thời gian chuyển động của tay	chân
+ DEF tgChanTayCD TimeSensor	{
+	 cycleInterval 1.5
+	 loop TRUE
+ }
+    
+ #góc chuyển động của tay chân phải
+ DEF gocCDChanTayPhai OrientationInterpolator {
+	 key [0 0.25 0.5 0.75 1]
+	 keyValue [1 0 0 0, 1 0 0 -0.3 , 1 0 0 0, 1 0 0 0.3, 1 0 0 0]
+ }
+
+ #tay phải chuyển động
+ ROUTE tgChanTayCD.fraction_changed	 TO	gocCDChanTayPhai.set_fraction
+ ROUTE gocCDChanTayPhai.value_changed TO tayPhai.set_rotation
+
+  #góc chuyển động của tay chân trái
+ DEF gocCDChanTayTrai OrientationInterpolator {
+	 key [0 0.25 0.5 0.75 1]
+	 keyValue [1 0 0 0, 1 0 0 0.3 ,1 0 0 0, 1 0 0 -0.3, 1 0 0 0]
+ }
+
+  #tay trái chuyển động
+ ROUTE tgChanTayCD.fraction_changed	 TO	gocCDChanTayTrai.set_fraction
+ ROUTE gocCDChanTayTrai.value_changed TO tayTrai.set_rotation
+
+  #chân phải chuyển động
+ ROUTE tgChanTayCD.fraction_changed	 TO	gocCDChanTayTrai.set_fraction
+ ROUTE gocCDChanTayTrai.value_changed TO chanPhai.set_rotation
+
+  #chân trái chuyển động
+ ROUTE tgChanTayCD.fraction_changed	 TO	gocCDChanTayPhai.set_fraction
+ ROUTE gocCDChanTayPhai.value_changed TO chanTrai.set_rotation
+
+
+ #thời gian người di chuyển 1 quãng đường
+ DEF tgdcqd TimeSensor {
+	 cycleInterval 18
+	 loop TRUE
+ }
+
+#quãng đường người di chuyển 
+ DEF qddc PositionInterpolator {
+	 key [0 0.5  1]
+	 keyValue [0 0 -15, 0 0 0, 0 0 -15]
+ }
+ ROUTE tgdcqd.fraction_changed TO qddc.set_fraction	
+ ROUTE qddc.value_changed TO nguoi.set_translation 
+
+ #góc quay của người thăm quan
+ DEF xoaynguoi  OrientationInterpolator {
+	 key [0 0.1 0.2 0.3 0.4 0.5 0.55 0.6 0.7 0.8 0.9,0.99 1]
+	 keyValue [ 0 1 0 0, 0 1 0 0 , 0 1 0 0,0 1 0 0, 0 1 0 0 , 0 1 0 3.14, 0 1 0 3.14, 0 1 0 3.14,0 1 0 3.14, 0 1 0 3.14 ,0 1 0 3.14 , 0 1 0 3.14, 0 1 0 3.14]
+ }
+ ROUTE tgdcqd.fraction_changed TO xoaynguoi.set_fraction
+ ROUTE xoaynguoi.value_changed TO nguoi.set_rotation

@@ -1,0 +1,71 @@
+#VRML V2.0 utf8
+
+Transform {
+	children [
+		DEF cot Shape {
+			appearance Appearance {
+				material Material {
+
+				}
+			}
+			geometry Box {
+				size 0.05 3 0.05
+			}
+		}
+	]
+}
+
+Transform {
+	children [
+		USE	cot
+	]
+	translation	0 0 0.15
+}
+
+Transform {
+	children [
+		USE	cot
+	]
+	translation	0.15 0 0
+}
+
+Transform {
+	children [
+		DEF noiCot Shape {
+			appearance Appearance {
+				material Material {
+
+				}
+			}
+			geometry Box {
+				size 0.2 0.025 0.2
+			}
+		}
+	]
+	translation	0.075 -1.4875 0.075
+}
+
+Transform {
+	children [
+		USE	noiCot
+	]
+	translation	0.075 -0.125 0.075
+}
+Transform {
+	children [
+		USE	noiCot
+	]
+	translation	0.075 0.125	0.075
+}
+Transform {
+	children [
+		USE	noiCot
+	]
+	translation	0.075 1.487 0.075
+}
+Transform {
+	children [
+		USE	noiCot
+	]
+	translation	0.075 1.387 0.075
+}

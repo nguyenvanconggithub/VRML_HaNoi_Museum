@@ -1,0 +1,86 @@
+#VRML V2.0 utf8
+
+Group {
+	children [
+				Transform {
+			children [
+				Inline {
+					url "TruCong.wrl"
+				}
+			]
+		}
+		Transform {
+			children [
+				Inline {
+					url "CongTraiMoDong.wrl"
+				}
+			]
+			translation	1.83 2.39 0.235
+		}
+		Transform {
+			children [
+				DEF DiemXoay Shape {
+					appearance Appearance {
+						material Material {
+
+						}
+					}
+					geometry Box {
+						size 0.1 0.08 0.2
+					}
+				}
+			]
+			translation	0.4 2.45 0.23 
+			rotation 0 1 0 1.57
+		}
+
+		Transform {
+			children [
+				USE	DiemXoay
+			]
+			translation	0.4 0.14 0.23 
+			rotation 0 1 0 1.57
+		}
+		Transform {
+			children [
+				Inline {
+					url "TruCong.wrl"
+				}
+			]
+			translation	6.5 0 0 
+			rotation 0 1 0 3.145
+		}
+
+		Transform {
+			children [
+				USE	DiemXoay
+			]
+			translation	6.1 2.45 0.23 
+			rotation 0 1 0 1.57
+		}
+
+		Transform {
+			children [
+				USE	DiemXoay
+			]
+			translation	6.1 0.14 0.23 
+			rotation 0 1 0 1.57
+		}
+
+		Transform {
+			children [
+				Inline {
+					url "CongPhaiMoDong.wrl"
+				}
+			]
+			translation	4.7 2.39 0.235
+		}
+		NavigationInfo {
+			avatarSize [0, 1.6, 0.75]
+		}
+	]
+}
+
+
+
+

@@ -1,0 +1,26 @@
+#VRML V2.0 utf8
+
+Billboard {
+	children Shape {
+			appearance Appearance {
+				texture	ImageTexture {
+					url	["image/ChuongDong.png"]
+				}	
+			}
+			geometry Box {
+			size 1.2 1.2 0
+			}
+	}
+	axisOfRotation 0 1 0
+}
+DEF	GoChuong TouchSensor {
+	enabled	TRUE
+}
+
+Sound {
+	source DEF TiengChuong AudioClip {
+		url	["audio/TiengChuong.mp3"]
+	}
+}
+
+ROUTE GoChuong.touchTime TO	TiengChuong.startTime

@@ -1,0 +1,563 @@
+#VRML V2.0 utf8
+
+# nền nhà to nhất cả bậc thang đi lên sân
+DEF	nen Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				texture	ImageTexture {
+					url	["..\image\nen_san.jpg"]
+				}
+			}
+			geometry Box {
+				size 20 20 0.1
+			}
+	
+		}
+	]
+	rotation 1 0 0 1.57
+}
+
+#gọi nền chồng lên làm bậc thứ hai
+Transform {
+	scale 0.99 0.99 0.99
+	children [USE nen]
+	translation	0 0.1 0
+}
+#gọi nền chồng làm bậc thứ ba
+Transform {
+	scale 0.98 0.98 0.98
+	children [USE nen]
+	translation	0 0.2 0 
+}
+#gọi nền chồng lên làm bậc thang thứ 4
+Transform {
+	scale 0.97 0.97 0.97
+	children [USE nen]
+	translation	0 0.3 0 
+}
+
+#Tường mặ trước 1
+Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					transparency 0.5
+				}
+			}
+			geometry Box {
+				size 14 2 0.05
+			}
+		} 
+	]
+	translation	0 3.35 7
+}
+#Tường mặ trước 2
+Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					transparency 0.5
+				}
+			}
+			geometry Box {
+				size 5 2 0.05
+			}
+		} 
+	]
+	translation	-4.5 1.35 7
+}
+#Tường trước 3
+Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					transparency 0.5
+				}
+			}
+			geometry Box {
+				size 5 2 0.05
+			}
+		} 
+	]
+	translation	4.5 1.35 7
+}
+#tuong hai ben
+DEF	TuongHaiBen Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					transparency 0.5
+				}
+			}
+			geometry Box {
+				size 14 4 0.05
+			}
+		}
+	]
+	translation	7.01 2.35 0
+	rotation 0 1 0 1.57
+}
+
+Transform {
+	children [
+		USE	TuongHaiBen
+	]
+	translation	-14 0 0
+}
+
+#tường đằng sau có của tự động
+#tường đăng sau 1
+Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					transparency 0.5
+				}
+			}
+			geometry Box {
+				size 14 2 0.05
+			}
+		}
+	]
+	translation	0 3.35 -7
+}
+#tường đằng sau 1
+DEF	dangdsau1 Transform {
+				children [
+					Shape {
+						appearance Appearance {
+							material Material {
+								transparency 0.5
+							}
+						}
+						geometry Box {
+							size 5.5 2 0.05
+						}
+					}
+				]
+				translation	4.25 1.35 -7
+			}
+
+Transform {
+	children [
+		USE	dangdsau1
+	]
+	translation	-8.5 0 0
+}
+
+
+#tầng hai trước
+DEF	tang2truoc Transform {
+					children [
+						Shape {
+							appearance Appearance {
+								texture	ImageTexture {
+									url	["..\image\nen_go.jpg"]
+								}
+							}
+							geometry Box {
+								size  17 1.5 0.05
+							}
+						}
+					]
+					translation	0 4.35 7.75
+					rotation 1 0 0 1.57
+				}
+
+#tầng 2 nền sau
+Transform {
+	children [ USE tang2truoc ]
+	translation	0 0 -15.5
+}
+
+#tầng 2 nền phải
+DEF	tang2trai Transform	{
+	children [
+		Shape {
+			appearance Appearance {
+				texture	ImageTexture {
+					url	["..\image\nen_go.jpg"]
+				}
+			}
+			geometry Box {
+				size  1.5 0.05 14
+			}
+		}
+	]
+	translation	7.75 4.35 0
+}
+#tầng 2 nền trái
+Transform {
+	children [USE tang2trai ]
+	translation	-15.5 0 0
+}
+
+#tầng 2 tường trái
+DEF	tang2tuongtruoc Transform {
+	children [
+		Shape {
+			appearance Appearance {
+					texture	ImageTexture {
+						url	["..\image\nen_tuong.png"]
+					}
+				}
+			geometry Box {
+				size 17 4 0.05
+			}
+		}
+	]
+	translation	0 6.35 8.5
+}
+
+#TẦNG 2 tường sau
+Transform {
+	children [USE tang2tuongtruoc ]
+	translation	0 0 -17
+}
+
+#tầng 2 tường trái
+Transform {
+	children [USE tang2tuongtruoc ]	   
+	rotation 0 1 0 1.57
+}
+#tầng 2 tường phải
+Transform {
+	children [USE tang2tuongtruoc ]	   
+	rotation 0 1 0 -1.57
+}
+
+#tâng 3 nền trước
+DEF	tang3nentruoc Transform	{
+	children [
+		Shape {
+			appearance Appearance {
+				texture	ImageTexture {
+					url	["..\image\nen_go.jpg"]
+				}
+			}
+			geometry Box {
+				size 20 1.5 0.05
+			} 
+		}
+	]
+	translation	0 8.35 9.25
+	rotation 1 0 0 1.57
+}
+
+#tầng 3 nền sau
+Transform {
+	children [USE tang3nentruoc ]
+	translation	0 0 -18.5
+}
+
+#tầng 3 nền trái
+DEF	tang3nentrai Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				texture	ImageTexture {
+					url	["..\image\nen_go.jpg"]
+				}
+			}
+			geometry Box {
+				size 1.5 0.05 17
+			} 
+		}
+	]
+	translation	-9.25 8.35 0
+}
+#tầng 3 nền phải
+Transform {
+	children [USE tang3nentrai ]
+	translation	18.5 0 0
+}
+
+#tầng 3 tường trước
+DEF	tang3tuongtruoc Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				texture	ImageTexture {
+					url	["..\image\nen_tuong.png"]
+				}
+			}
+			geometry Box {
+				size 20 4 0.05
+			}
+		}
+	]
+	translation	0 10.35 10
+}
+#tầng 3 tường sau
+Transform {
+	children [USE tang3tuongtruoc ]
+	translation	0 0 -20
+}
+#tâng 3 tường phải
+Transform {
+	children [USE tang3tuongtruoc ]
+	rotation 0 1 0 1.57
+}
+#tâng 3 tường trái
+Transform {
+	children [USE tang3tuongtruoc ]
+	rotation 0 -1 0 1.57
+}
+
+#tầng 4 nền trước
+DEF	tang4nentruoc Transform	{
+	children [
+		Shape {
+			appearance Appearance {
+				texture	ImageTexture {
+					url	["..\image\nen_go.jpg"]
+				}
+			}
+			geometry Box {
+				size 23 0.05 1.5
+			}
+		}
+	]
+	translation	0 12.36 10.75
+}
+#tầng 4 nền sau
+Transform {
+	children [USE tang4nentruoc ]
+	translation	0 0 -21.5
+}
+#tầng 4 nền phải
+DEF	tang4nenphai Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				texture	ImageTexture {
+					url	["..\image\nen_go.jpg"]
+				}
+			}
+			geometry Box {
+				size 1.5 0.05 20
+			}
+		}
+	]
+	translation	10.75 12.36 0
+}
+#tàng 4 nền trái
+Transform {
+	children [USE tang4nenphai ]
+	translation	-21.5 0 0
+}
+
+#tầng 4 tường trước
+DEF	tang4tuongtruoc Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				texture	ImageTexture {
+					url	["..\image\nen_tuong.png"]
+				}
+			}
+			geometry Box {
+				size 23 4 0.05
+			}
+		}
+	]
+	translation	0 14.4 11.5
+}
+#tầng 4 tường sau
+Transform {
+	children [USE tang4tuongtruoc ]
+	translation	0 0 -23
+}
+
+#tầng 4 tường phải
+Transform {
+	children [USE tang4tuongtruoc ]
+	rotation 0 1 0 1.57
+}
+#tầng 4 tường trái
+Transform {
+	children [USE tang4tuongtruoc ]
+	rotation 0 -1 0 1.57
+}
+
+#nhóm cái chắn mái hiên
+DEF	thanhMaiHien Group {
+	children [
+		Transform {
+			children [
+				Shape {
+					appearance Appearance {
+						material Material {
+							shininess 0.2
+						}
+					}
+					geometry Box {
+						size  24 0.2 0.1
+					}
+				}
+			]
+			translation	0 16.4 12
+		}
+		Transform {
+			children[
+				Shape {
+						appearance Appearance {
+							material Material {
+								shininess 0.2
+							}
+						}
+						geometry Box {
+							size  25 0.2 0.1
+					}
+				}
+			]
+			translation	0 16.4 12.5
+		}
+		Transform {
+			children[
+				Shape {
+						appearance Appearance {
+							material Material {
+								shininess 0.2
+							}
+						}
+						geometry Box {
+							size  26 0.2 0.1
+					}
+				}
+			]
+			translation	0 16.4 13
+		}
+		Transform {
+			children[
+				Shape {
+						appearance Appearance {
+							material Material {
+								shininess 0.2
+							}
+						}
+						geometry Box {
+							size  27 0.2 0.1
+					}
+				}
+			]
+			translation	0 16.4 13.5
+		}
+	]
+}
+
+#thành mái hiên sau
+Transform {
+	children [USE thanhMaiHien ]
+	rotation 0 1 0 3.14
+}
+#thành mái hiên phải
+Transform {
+	children [USE thanhMaiHien ]
+	rotation 0 1 0 1.57
+}
+#thành mái hiên trái
+Transform {
+	children [USE thanhMaiHien ]
+	rotation 0 -1 0 1.57
+}
+
+#cột trước tầng một
+DEF	cotTang1group Group	{
+	children [
+		DEF	cotTang1 Transform {
+			children [
+				Shape {
+					appearance Appearance {
+						material Material {
+							shininess 0.2
+						}
+					}
+					geometry Box {
+						size  0.2 4 0.2
+					}
+				}
+			]
+			translation	-2 2.35 7
+		}
+
+		Transform {
+			children [USE cotTang1 ]
+			translation -0.3 0 0
+		}
+
+		Transform {
+			children [USE cotTang1 ]
+			translation 4 0 0
+		}
+		Transform {
+			children [USE cotTang1 ]
+			translation 4.3 0 0
+		}
+
+		Transform {
+			children [USE cotTang1 ]
+			translation 6.5 0 0
+		}
+		Transform {
+			children [USE cotTang1 ]
+			translation -2.5 0 0
+		}
+	]
+}
+
+#CỘT Bên phải
+Transform {
+	children [
+		USE	cotTang1group
+	]
+	rotation 0 1 0 1.57
+}
+#CỘT Bên trái
+Transform {
+	children [
+		USE	cotTang1group
+	]
+	rotation 0 -1 0 1.57
+}
+#CỘT sau
+Transform {
+	children [
+		USE	cotTang1group
+	]
+	rotation 0 1 0 3.14
+}
+
+#trần nhà
+DEF	tran Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				texture	ImageTexture {
+					url	["..\image\tran.png"]
+				}
+			}
+			geometry Box {
+				size 23 0.1 23
+			}
+		}
+	]
+	translation	0 16.3 0
+}
+
+Transform {
+	children [USE tran ]
+	scale 0.9 1 0.9
+	translation	0 0.2 0
+}
+Transform {
+	children [USE tran ]
+	scale 0.8 1 0.8
+	translation	0 0.4 0
+}

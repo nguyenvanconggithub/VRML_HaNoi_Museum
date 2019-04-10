@@ -1,0 +1,70 @@
+#VRML V2.0 utf8
+DEF den PointLight {
+	location 0 -0.02 0
+	radius 2
+	on FALSE
+	intensity 0.5
+	ambientIntensity 0.65
+	color 0.5 1 1
+}
+
+Sound {
+	source DEF am AudioClip {
+		loop FALSE
+		url	["..\audio\bat_tat_den.wav"]
+		description	"am thanh huong dan tat bat den"
+	}
+	location 0 -1 0
+#	spatialize TRUE
+	minBack	0
+	minFront 0
+	maxBack	10
+	maxFront 10
+}
+
+DEF	ts TouchSensor {
+	enabled	TRUE
+}
+Transform {	
+	scale 1 0.2 1
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					 diffuseColor 1 1 1
+				}
+			}
+			geometry Sphere	{
+				radius 0.2
+			}
+		}
+	
+	]
+}
+
+DEF javaScript Script {
+	eventIn	SFBool cong_tac
+	field SFBool bat_tat FALSE
+	eventOut SFBool	bong_sang
+
+	url	"javascript:
+	function cong_tac(val){
+		if(val){
+			if(!bat_tat){
+				bong_sang = true;
+				bat_tat = true;
+			}else{
+				bong_sang = false;
+				bat_tat = false;
+			}
+		}
+	}
+	"
+	
+}
+ROUTE ts.isActive	TO javaScript.cong_tac
+ROUTE javaScript.bong_sang  TO den.on
+
+ROUTE ts.touchTime  TO am.startTime
+
+

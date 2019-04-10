@@ -1,0 +1,97 @@
+#VRML V2.0 utf8
+
+Transform {
+	children [
+		 DEF songSat Shape {
+			    appearance DEF mauSongSat Appearance {
+			    material  Material {
+					diffuseColor 0 0.545 0.271
+				}
+			}
+			geometry Box {
+				size 0.05 1.5 0.05
+
+			}
+		}
+	]
+}
+Transform {
+	children [
+		USE	songSat
+	]
+	translation	0.173 0 0
+}
+Transform {
+	children [
+		USE	songSat
+	]
+	translation	0 0 -0.175
+}
+Transform {
+	children [
+		USE	songSat
+	]
+	translation	0.173 0 -0.175
+}
+Transform {
+	children [
+		DEF h Shape {
+			appearance USE mauSongSat
+			geometry Box {
+				size 0.22 0.05 0.22
+			}
+		}
+	]
+	translation	0.087 0.775 -0.087
+}
+
+Transform {
+	children [
+		Shape {
+			appearance USE mauSongSat
+			geometry Sphere {
+				radius 0.085
+			}
+		}
+	]
+	translation	 0.087 0.85 -0.087
+}
+Transform {
+	children [
+		USE	h
+	]
+	translation	0.087 -0.775 -0.087
+}
+
+
+
+Transform {
+	children [
+		DEF thanhNgang Shape {
+			appearance USE mauSongSat
+			geometry Box {
+				size 0.05 0.05 0.15 
+			}
+		}
+	]
+	translation	0 0.5 -0.075
+}
+Transform {
+	children [
+		 USE thanhNgang
+	]
+	translation	0 -0.5 -0.075
+}
+Transform {
+	children [
+		 USE thanhNgang
+	]
+	translation	0.175 -0.5 -0.075
+}
+Transform {
+	children [
+		 USE thanhNgang
+	]
+	translation	0.175 0.5 -0.075
+}
+

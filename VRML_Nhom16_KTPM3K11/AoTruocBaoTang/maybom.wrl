@@ -1,0 +1,110 @@
+#VRML V2.0 utf8
+
+#vòi máy bơm
+Transform {
+	children [
+		Shape {
+			appearance DEF m Appearance {
+				material Material {
+				   diffuseColor	0 0.573 0.596
+				}
+			}
+			geometry Cylinder {
+				height 0.4 
+				radius 0.05
+			}
+		}
+	]
+}
+Transform {
+	children [
+		Shape {
+			appearance  Appearance {
+				material Material {
+				  
+				}
+			}
+			geometry Cone {
+				height 0.45
+				bottomRadius 0.05
+			}
+		}
+	]
+	scale 2 1.5 2
+	rotation 1 0 0 3.14
+	translation	0 0.05 0
+}
+
+# thân máy
+DEF vongtren Group {	  #vongtren
+	children [
+		Transform {
+			children [
+				DEF vong Shape {
+					appearance USE m
+					geometry Sphere	{
+						radius 0.2
+					}
+				}
+			]
+			scale 1 0.1 1
+			translation	0 -0.1 0
+		}
+		Transform {
+			children [
+				USE	vong
+			]
+			scale 1 0.1 1
+			translation	 0 -0.125 0
+		}
+	]
+}
+
+
+Transform {
+	 children [
+		 Shape {
+			 appearance	USE	m
+			 geometry Sphere
+			 {
+				 radius	0.3
+			 }
+		 }
+	 ]
+	 scale 0.6 0.5 0.6
+	 translation 0 -0.235 0 
+}
+
+#vongduoi
+Transform {
+	children [
+		USE	vongtren
+	]
+	translation	0 -0.25 0
+}
+
+Transform {
+	children [
+		Shape {
+			appearance USE m
+			geometry Cone {
+				bottomRadius 0.045
+				height 0.3
+			}
+		}
+	]
+	translation	-0.25 -0.25 0
+	rotation 0 0 1 1.57
+}
+Transform {
+	children [
+		USE	vong
+	]
+	translation	-0.37 -0.25 0
+	rotation 0 0 1 1.57
+	scale  0.5 0.1 0.5
+}
+
+
+
+

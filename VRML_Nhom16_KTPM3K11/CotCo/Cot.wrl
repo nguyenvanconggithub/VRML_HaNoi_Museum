@@ -1,0 +1,89 @@
+#VRML V2.0 utf8
+
+Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					transparency 0.01
+				}
+			}
+			geometry Cylinder {
+				height 3
+				radius 0.08
+				side TRUE
+				bottom TRUE
+				top	TRUE
+			}
+		}
+	]
+}
+Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					transparency 0.01
+				}
+			}
+			geometry Cylinder {
+				height 3 
+				radius 0.05
+				side TRUE
+				bottom TRUE
+				top	TRUE
+			}
+		}
+	]
+	translation	0 3 0
+}
+Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					transparency 0.01
+				}
+			}
+			geometry Cylinder {
+				height 2 
+				radius 0.03
+				side TRUE
+				bottom TRUE
+				top	TRUE
+			}
+		}
+	]
+	translation	0 5.5 0
+}
+Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					transparency 0.01
+				}
+			}
+			geometry Sphere	{
+				radius 0.08
+			}
+		}
+	]
+	translation	0 6.54 0
+}
+Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					transparency 0.01
+				}
+			}
+			geometry Sphere	{
+				radius 0.2
+			}
+		}
+	]
+	translation	0 -1.5 0
+	scale 2 0.1 1
+}

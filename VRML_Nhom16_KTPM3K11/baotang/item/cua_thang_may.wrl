@@ -1,0 +1,117 @@
+#VRML V2.0 utf8
+
+#của thang máy trái tầng 1
+
+DEF	cua1 Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					shininess 0.2
+				}
+			}
+			geometry Box {
+				size 0.5 4 0.1
+			}
+		}
+		DEF camBiendivao ProximitySensor	{
+			size 3 4 0.25
+		}
+		DEF khongVao ProximitySensor	{
+			size 3 2.5 10
+		}
+	]
+	translation	0.37 0 0
+}
+
+#của thang máy phải
+Transform {
+	children [USE cua1 ]
+	translation	1.5 0 0
+}
+
+#cửa thang máy trái chuyển động
+DEF	cua_trai Transform {
+	children [USE cua1]
+	translation	0.5 0 0
+}
+#cửa thang máy phải chuyển động
+DEF	cua_phai Transform {
+	children [USE cua1]
+	translation	1 0 0
+}
+
+DEF	nut_len Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				texture	ImageTexture {
+					url	["..\image\ra.jpg"]
+					repeatT	TRUE
+				}
+			}
+			 geometry Cylinder {
+				height 0.2
+				radius 0.1
+				top	TRUE
+				bottom TRUE
+				side TRUE
+			 }
+		}
+
+		DEF	ts TouchSensor {
+			enabled	TRUE
+		}
+	]
+	rotation 1 0 0 1.57
+	translation	1.8 -0.5 0.01
+
+}
+DEF OpenClock TimeSensor {
+    cycleInterval 1
+    loop FALSE
+    startTime 0.0
+    stopTime 3
+}
+DEF CloseClock TimeSensor {
+    cycleInterval 1
+    loop FALSE
+    startTime 0.0
+    stopTime 3
+}
+
+# Animation paths for the left and right doors
+DEF LeftOpen PositionInterpolator {
+    key [ 0.0, 1.0 ]
+    keyValue [ 0.5 0.0 0.0, 0 0.0 0.0 ]
+}
+DEF LeftClose PositionInterpolator {
+    key [ 0.0, 1.0 ]
+    keyValue [ 0 0.0 0.0, 0.5 0.0 0.0 ]
+}
+DEF RightOpen PositionInterpolator {
+    key [ 0.0, 1.0 ]
+    keyValue [ 1 0.0 0.0, 1.5 0.0 0.0 ]
+}
+DEF RightClose PositionInterpolator {
+    key [ 0.0, 1.0 ]
+    keyValue [ 1.5 0.0 0.0, 1 0.0 0.0 ]
+} 
+
+ROUTE ts.touchTime TO OpenClock.set_startTime
+ROUTE camBiendivao.enterTime TO	CloseClock.set_startTime 
+ROUTE khongVao.exitTime TO CloseClock.set_startTime
+
+ROUTE OpenClock.fraction_changed  TO LeftOpen.set_fraction
+ROUTE OpenClock.fraction_changed  TO RightOpen.set_fraction
+ROUTE CloseClock.fraction_changed TO LeftClose.set_fraction
+ROUTE CloseClock.fraction_changed TO RightClose.set_fraction
+
+ROUTE LeftOpen.value_changed      TO cua_trai.set_translation
+ROUTE LeftClose.value_changed     TO cua_trai.set_translation
+ROUTE RightOpen.value_changed     TO cua_phai.set_translation
+ROUTE RightClose.value_changed    TO cua_phai.set_translation
+
+
+
+

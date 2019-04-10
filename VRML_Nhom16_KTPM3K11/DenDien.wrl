@@ -1,0 +1,186 @@
+#VRML V2.0 utf8
+
+#chân cột đèn
+Transform {
+	children [
+		Shape {
+			appearance DEF mau Appearance {
+				material Material {
+					diffuseColor 0 0.385 0.255
+
+				}
+			}
+			geometry Cylinder {
+				radius 0.15 
+				height 0.2
+
+			}
+		}
+	]
+}
+Transform {
+	children [
+		Shape {
+			appearance USE mau
+			geometry Cone {
+				height 0.7
+				bottomRadius 0.13
+			}
+		}
+	]
+	translation 0 0.45 0	
+}
+
+
+#vòng trong quanh chân đèn
+Transform {
+	children [
+	DEF	sp Shape {
+			appearance USE mau 
+			geometry Sphere	{
+				radius 0.15
+			}
+		}
+	]
+	scale 1 0.1 1
+	translation	0 0.15 0
+}
+
+Transform {
+	children [
+		USE	 sp
+	]
+	scale 0.8 0.1 1
+	translation	0 0.35 0
+}
+Transform {
+	children [
+		USE	 sp
+	]
+	scale 0.55 0.1 0.55
+	translation	0 0.45 0
+}
+
+# cột 1 nối chân đèn với bóng đèn
+
+Transform {
+	children [
+		DEF cot Shape {
+			appearance USE mau
+			geometry Cylinder {
+				height 1.2 
+				radius 0.045
+			}
+		}
+   ]
+   translation 0 1 0
+}
+
+#vòng tròn nối 2 trụ
+Transform {
+	children [
+		Shape {
+			appearance USE mau
+			geometry Sphere	{
+				radius 0.05
+			}
+		}
+	]
+	translation	0 1.64 0
+}
+# cột 2 nối chân đèn với bóng đèn
+Transform {
+	children [
+		USE	cot
+	]
+	translation	0 2.28 0
+}
+
+ #trụ đỡ bóng đèn
+Transform {
+	children [
+		Shape {
+			appearance USE mau
+			geometry Cone {
+				bottomRadius 0.05
+				height 0.3
+			}
+		}
+	]
+	translation	 0 2.9 0
+	scale 2 1 2
+	rotation 1 0 0 3.14
+}
+
+
+Transform {
+	children [
+		USE	sp
+	]
+	scale 1.2 0.1 1.2
+	translation	0 3.05 0
+
+}
+
+#bóng đèn
+Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				material DEF mauDen Material {
+					transparency 0.5
+				}
+			}
+			geometry Cylinder {
+				height 0.3
+				radius 0.125
+			}
+		}
+	]
+	translation	0 3.2 0
+}
+
+Transform {
+	children [
+		USE	sp
+	]
+	scale 1.2 0.1 1.2
+	translation	0 3.35 0
+
+}
+
+DEF AS SpotLight {
+	direction 0 -1 0
+	radius 5
+	on FALSE
+}
+DEF	congTac TouchSensor {
+}
+DEF	HanhDong Script	{
+	eventIn	SFBool chamCongTac
+	field SFBool Bat TRUE
+	eventOut SFBool	on
+	eventOut SFColor mau
+
+	url "javascript:			  
+	function chamCongTac(val){
+		if(val && !Bat){
+			on = true;
+			mau[0] = 1;
+			mau[1] = 1;
+			mau[2] = 1;
+			Bat = true;
+		}
+		else if(val && Bat){
+			on = false;
+			mau[0] = 0;
+			mau[1] = 0;
+			mau[2] = 0;
+			Bat = false;
+		}
+	}"
+}
+
+ROUTE congTac.isActive TO HanhDong.chamCongTac
+ROUTE HanhDong.on TO AS.on
+ROUTE HanhDong.mau TO mauDen.emissiveColor

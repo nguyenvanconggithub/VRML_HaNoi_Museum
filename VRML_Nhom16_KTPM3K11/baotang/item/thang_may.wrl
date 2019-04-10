@@ -1,0 +1,54 @@
+#VRML V2.0 utf8
+
+#nền sau
+DEF	tuong Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				texture	ImageTexture {
+					url	["..\image\tm.jpg"]
+				}
+			}
+			geometry Box {
+				size 2 16 0.1
+			}
+		}
+	]
+}
+
+#nền trái
+Transform {
+	children [USE tuong]  
+	rotation 0 1 0 1.57
+	scale 1.5 1 1
+	translation	-1 0 1.55
+}
+
+#nền phải
+Transform {
+	children [USE tuong]	
+	rotation 0 1 0 -1.57
+	scale 1.5 1 1
+	translation	0.95 0 1.55
+}
+
+#cua tầng 1
+DEF	cua_tang_1 Transform {
+	children [Inline {
+		url	["cua_thang_may.wrl"]
+	}]
+	translation	-1.125 -6 3.1
+}
+
+DEF	cua_tang_2 Transform {
+	children [USE cua_tang_1 ]	 
+	translation	0 4 0
+}
+DEF	cua_tang_3 Transform {
+	children [USE cua_tang_2 ]
+	translation	0 4 0
+}
+DEF	cua_tang_4 Transform {
+	children [USE cua_tang_3 ]
+	translation	0 4 0
+}
