@@ -1,0 +1,34 @@
+#VRML V2.0 utf8
+
+Transform {
+	children [
+	   Shape {
+			appearance Appearance {
+				texture	ImageTexture {
+					url	["..\image\go2.jpg"]
+				}
+			} 
+			geometry Box {
+				size 1 2 0.2
+			}
+		}
+		
+	]
+}
+DEF	tivi Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				texture	MovieTexture {
+					loop TRUE
+					url	["..\video\ok.wmv"]
+				}
+			}
+			geometry Box {
+				size 1 1 0.01
+			}
+		}
+	]
+	translation	0 0.4 0.1
+}
+

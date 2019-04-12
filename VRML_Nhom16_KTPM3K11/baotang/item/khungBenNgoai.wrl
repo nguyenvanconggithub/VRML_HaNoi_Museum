@@ -1,5 +1,13 @@
 #VRML V2.0 utf8
 
+
+#tivi
+Transform {
+	children [Inline {
+		url	"..\item\tivi.wrl"
+	}]
+	translation	4.5 1.38 -6
+}
 # nền nhà to nhất cả bậc thang đi lên sân
 DEF	nen Transform {
 	children [
