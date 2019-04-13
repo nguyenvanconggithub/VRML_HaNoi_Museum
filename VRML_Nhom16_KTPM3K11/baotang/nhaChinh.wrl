@@ -124,7 +124,7 @@ Transform {
 					}
 					Sound {
 						source DEF am2 AudioClip {
-							loop FALSE
+							loop TRUE
 							url	["audio\nhac.wav"]
 							description	"am thanh huong dan tat bat den"
 						}
