@@ -122,6 +122,19 @@ Transform {
 						maxBack	5
 						maxFront 5
 					}
+					Sound {
+						source DEF am2 AudioClip {
+							loop FALSE
+							url	["audio\nhac.wav"]
+							description	"am thanh huong dan tat bat den"
+						}
+						location 0 0 0
+						minBack	0
+						minFront 0
+						maxBack	60
+						maxFront 60
+
+					}
 				]
 			}
 		}
@@ -172,6 +185,7 @@ Transform {
 	ROUTE hop_cam_bien.exitTime       TO CloseClock.set_startTime
 	ROUTE hop_cam_bien.enterTime      TO am.startTime
 	ROUTE hop_cam_bien.exitTime       TO am.stopTime
+	ROUTE hop_cam_bien.enterTime      TO am2.startTime
 
 
 	ROUTE OpenClock.fraction_changed  TO LeftOpen.set_fraction
@@ -255,7 +269,7 @@ Transform {
 						size 4 3 4
 	    			}
 					Sound {
-						source DEF am2 AudioClip {
+						source DEF am3 AudioClip {
 							loop FALSE
 							url	["audio\cua_tu_dong.wav"]
 							description	"am thanh huong dan tat bat den"
@@ -265,6 +279,19 @@ Transform {
 						minFront 0
 						maxBack	5
 						maxFront 5
+					}
+					Sound {
+						source DEF am4 AudioClip {
+							loop FALSE
+							url	["audio\nhac.wav"]
+							description	"am thanh nhạc nền Hà Nội gì đấy"
+						}
+						location 0 0 0
+						minBack	0
+						minFront 0
+						maxBack	60
+						maxFront 60
+
 					}
 				]
 			}
@@ -314,8 +341,9 @@ Transform {
 
 	ROUTE hop_cam_bien2.enterTime      TO OpenClock2.set_startTime
 	ROUTE hop_cam_bien2.exitTime       TO CloseClock2.set_startTime
+	ROUTE hop_cam_bien2.enterTime      TO am3.startTime
+	ROUTE hop_cam_bien2.exitTime       TO am3.stopTime
 	ROUTE hop_cam_bien2.enterTime      TO am2.startTime
-	ROUTE hop_cam_bien2.exitTime       TO am2.stopTime
 
 
 	ROUTE OpenClock2.fraction_changed  TO LeftOpen2.set_fraction
