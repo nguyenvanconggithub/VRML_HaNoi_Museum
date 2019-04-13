@@ -39,7 +39,6 @@ Transform {
 	translation	-6 8.35 7
 	rotation 0 1 0 3.14
 }
-
 	   
 
 #của tự đông trước nhà
@@ -626,12 +625,6 @@ Transform {
 }
 Transform {
 	children Inline	{
-		url	"Hien Vat Trung Bay/HienVat_0842.wrl"
-	}
-	translation	-3 12.85 9
-}
-Transform {
-	children Inline	{
 		url	"Hien Vat Trung Bay/HienVat_0848.wrl"
 	}
 	translation	-3 13.1 -9
@@ -672,9 +665,16 @@ ROUTE movementForNguoiTang1.value_changed TO nguoiTang1.translation
 ROUTE rotationForNguoiTang1.value_changed TO nguoiTang1.rotation
 
 DEF baoVeTang2 Transform {
-	children Inline	{
+	children [
+		Inline	{
 		url	"BaoVe.wrl"
-	}
+		}
+		DEF	baoVeBatTromTang2 ProximitySensor {
+			enabled	FALSE
+			size  1 1.7 1
+			center 0 -0.8 0
+		}
+	]
 	translation	-8 5.9 8
 	rotation 0 1 0 3.14
 }
@@ -739,9 +739,16 @@ ROUTE movementForNguoiTang3.value_changed TO nguoiTang3.translation
 ROUTE rotationForNguoiTang3.value_changed TO nguoiTang3.rotation
 
 DEF baoVeTang4 Transform {
-	children Inline	{
+	children [
+		Inline	{
 		url	"BaoVe.wrl"
-	}
+		}
+		DEF	baoVeBatTromTang4 ProximitySensor {
+			enabled	FALSE
+			size  1 1.7 1
+			center 0 -0.8 0
+		}
+	]
 	translation	-11 14 -10.5
 }
 
@@ -772,8 +779,335 @@ ROUTE movementForbaoVeTang4.value_changed TO baoVeTang4.translation
 ROUTE rotationForbaoVeTang4.value_changed TO baoVeTang4.rotation
 	#END OF Bảo vệ và Người đi lại 
 #END OF Nội Thất
+
+DEF	Prison Transform {
+	children [
+		DEF	prisonSensor ProximitySensor {
+			center 0 0 0
+			size 1000 1000 1000
+		}
+		DEF NoLife Transform {
+			children Transform {
+				children Shape {
+					appearance Appearance {
+						texture	ImageTexture {
+							url "image/SongSatTu.jpg"
+							repeatT	FALSE
+						}
+						textureTransform TextureTransform {
+							scale 5 5
+						}
+					}
+					geometry Box {
+						size 5 5 5
+					}
+				}
+				translation	0 0.1 -3
+			}
+		}
+		DEF	text Transform {
+			children Transform {
+				children Shape {
+					appearance Appearance {
+						material Material {
+							diffuseColor 1 0 0
+						}
+					}
+					geometry Text {
+						fontStyle FontStyle	{
+							size 0.05
+						}
+						string "Bạn Đã Bị Bắt Vì Ăn Trộm Đồ :("
+					}
+				}
+				translation	-0.28 0 -0.4
+			}
+
+		}
+	]
+	translation	9999 9999 9999
+}
+ROUTE prisonSensor.position_changed	TO text.translation
+ROUTE prisonSensor.orientation_changed TO text.rotation
+ROUTE prisonSensor.position_changed	TO NoLife.translation
+ROUTE prisonSensor.orientation_changed TO NoLife.rotation
+DEF anTrom Transform {
+	children [
+		DEF	ps ProximitySensor {
+			center 0 0 0
+			size 1000 1000 1000
+		}
+		DEF	HienVatAnTrom Transform {
+			children [
+				Transform {
+					children Shape {
+						appearance Appearance {
+							texture	ImageTexture {
+								url "image/HienVatTrungBayIMG/IMG_0842.png"
+							}
+						}
+						geometry Box {
+							size 0.2 0.3 0.2
+						}
+					
+					}
+					translation	0.3 0.1 -1
+					rotation 0 1 0 -0.2
+				}
+			]
+		}
+
+		DEF	TayNguoiAnTrom Transform {
+			children [
+				Transform {
+
+				}
+			   Transform {
+				children Shape {
+					appearance Appearance {
+						material Material {
+						   diffuseColor	0.9882353 0.854902 0.83529411
+						}
+					}
+					geometry Cylinder {
+						height 0.6
+						radius 0.05
+					}
+				}
+				translation	0.3 -0.3 -0.8
+				rotation 1 0 0 2.4
+			}
+				Transform {
+					children Shape {
+						appearance Appearance {
+							material Material {
+								diffuseColor 0.9882353 0.854902 0.83529411
+							}
+						}
+						geometry Box {
+							size 0.1 0.01 0.2
+						}
+					}
+					translation	0.3 -0.04 -1
+					rotation 1 -1 0 0.5
+				}
+				Transform {
+					children Shape {
+						appearance Appearance {
+							material Material {
+								diffuseColor 0.9882353 0.854902 0.83529411
+							}
+						}
+						geometry Box {
+							size 0.01 0.01 0.05 
+						}
+					}
+					translation	0.33 -0.05 -0.9
+					rotation 1 -1 0 1
+				}
+			]
+		}
+
+	]
+	translation	999999 9999 9999
+}
+ROUTE ps.position_changed TO HienVatAnTrom.translation
+ROUTE ps.position_changed TO TayNguoiAnTrom.translation
+ROUTE ps.orientation_changed TO	HienVatAnTrom.rotation
+ROUTE ps.orientation_changed TO	TayNguoiAnTrom.rotation
+
+#Bien Mat Vat
+
+#VRML V2.0 utf8
+
 Transform {
-	children Inline	{
-		url	""
+	children [
+Billboard {
+	children[ DEF vat Transform {
+		children Shape {
+			appearance Appearance {
+				texture ImageTexture {
+					url "image/HienVatTrungBayIMG/IMG_0842.png"
+				}
+			}
+			geometry Box {
+				size 0.3 0.5 0
+			}
+		}
+		translation	0 0.6 0
+	}
+		DEF	touchVat TouchSensor {
+		}
+	]
+}
+
+#Bục Gỗ
+Shape {
+	appearance Appearance {
+		material Material {
+			diffuseColor 0.2 0.1 0
+		}
+	}
+	geometry Box {
+		size 0.85 0.6 0.85
 	}
 }
+
+#Bục Vải Đỏ
+Transform {
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					diffuseColor 0.8 0 0
+					emissiveColor 0.5 0 0
+				}
+			}
+			geometry Extrusion {
+				crossSection [-0.425 -0.425,0.425 -0.425,0.425 0.425,-0.425 0.425, -0.425 -0.425]
+				spine [0 0 0, 0 0.1 0]
+				solid FALSE
+				scale [1 1, 0.75 0.75]
+			}
+		}
+	]
+	translation	0 0.3 0
+}
+#Kính Bảo Vệ
+Transform {
+	children [
+		DEF kinh Transform {
+			children Shape {
+			appearance Appearance {
+				material Material {
+					diffuseColor 1 1 1
+					transparency 0.9
+				}
+			}
+			geometry Box {
+			   size	0.85 0.6 0.85
+			}
+		}
+
+		}
+		DEF	touchKinh TouchSensor {
+		}
+	]
+	translation	0 0.6 0
+}
+
+	]
+	translation	-3 12.85 9
+}
+Transform {
+	children [
+		DEF denBaoDong PointLight {
+			radius 20
+			color 1 0 0
+			ambientIntensity 1
+			attenuation	0 0 0
+			location 0 17 0
+			on FALSE
+		}
+		Sound {
+			source DEF tiengCoiBaoDong AudioClip {
+				url "audio/tiengCoiBaoDong.mp3"
+				loop FALSE
+				
+			}
+			direction 0 -1 0
+			location 0 0 0
+			maxFront 30
+			minFront 30
+			maxBack	30
+			minBack	30
+			priority 1
+		}
+	]
+}
+
+DEF	doiMauDenBaoDong ColorInterpolator {
+	key	[0 1]
+	keyValue [0 0 0,1 0 0]
+}
+DEF	timeDoiMauDenBaoDong TimeSensor	{
+	loop TRUE
+	cycleInterval 0.5
+}
+DEF js Script {
+	eventIn	SFBool touchKinh
+	eventIn	SFBool touchVat
+	eventIn	SFBool batDuocTrom
+	eventOut SFVec3f kinhBienMat
+	eventOut SFVec3f vatBienMat
+	eventOut SFVec3f tayVaHienVatAnTromShow
+	eventOut SFTime tocDoCao
+	eventOut SFBool	dangAnTrom
+	eventOut SFBool	sendFalse
+	eventOut SFVec3f toaDoPrison
+	eventOut SFVec3f isInPrison
+
+	url	"javascript:
+	function touchKinh(val){
+		if(val == true){
+			dangAnTrom = true;
+			kinhBienMat[0] = 99999;
+			kinhBienMat[1] = 99999;
+			kinhBienMat[2] = 99999;
+			tocDoCao = 10
+			sendFalse = false;
+		}
+	}
+	function touchVat(val){
+		if(val == true){
+			vatBienMat[0] = 99999;
+			vatBienMat[1] = 99999;
+			vatBienMat[2] = 99999;
+			tayVaHienVatAnTromShow[0] = 0;
+			tayVaHienVatAnTromShow[1] = 0;
+			tayVaHienVatAnTromShow[2] = 0;
+		}
+	}
+	function batDuocTrom(val){
+		if(val == true){
+			tayVaHienVatAnTromShow[0] = 9999;
+			tayVaHienVatAnTromShow[1] = 9999;
+			tayVaHienVatAnTromShow[2] = 9999;
+
+			isInPrison[0] = 0;
+			isInPrison[1] = 0;
+			isInPrison[2] = 0;
+
+			dangAnTrom = false;
+		}
+	}
+	"
+}
+
+ROUTE touchKinh.isActive TO	js.touchKinh
+ROUTE js.kinhBienMat TO	kinh.translation
+ROUTE touchVat.isActive	TO js.touchVat
+ROUTE js.vatBienMat	TO vat.translation
+ROUTE js.tayVaHienVatAnTromShow	TO anTrom.translation
+ROUTE js.tocDoCao TO timeForbaoVeTang4.cycleInterval
+ROUTE js.tocDoCao TO timeForbaoVeTang2.cycleInterval
+ROUTE js.tocDoCao TO timeForNguoiTang1.cycleInterval
+ROUTE js.tocDoCao TO timeForNguoiTang3.cycleInterval
+ROUTE touchKinh.touchTime TO timeDoiMauDenBaoDong.startTime
+ROUTE touchKinh.touchTime TO tiengCoiBaoDong.startTime
+ROUTE js.dangAnTrom	TO denBaoDong.on
+ROUTE js.dangAnTrom	TO tiengCoiBaoDong.loop
+ROUTE js.dangAnTrom	TO baoVeBatTromTang2.enabled
+ROUTE js.dangAnTrom	TO baoVeBatTromTang4.enabled
+ROUTE js.sendFalse TO hop_cam_bien.enabled
+ROUTE js.sendFalse TO hop_cam_bien2.enabled
+ROUTE timeDoiMauDenBaoDong.fraction_changed	TO doiMauDenBaoDong.set_fraction
+ROUTE doiMauDenBaoDong.value_changed TO	denBaoDong.color
+
+ROUTE baoVeBatTromTang2.isActive	TO js.batDuocTrom
+ROUTE baoVeBatTromTang2.enterTime TO tiengCoiBaoDong.stopTime
+ROUTE baoVeBatTromTang4.isActive	TO js.batDuocTrom
+ROUTE baoVeBatTromTang4.enterTime TO tiengCoiBaoDong.stopTime
+ROUTE js.isInPrison	TO Prison.translation
+
+#END Bien Mat Vat
